@@ -8,7 +8,7 @@ using System.Data.Common;
 using System.Windows.Forms;
 using System.Configuration;
 
-namespace NetlibApi1
+namespace NetlibApi1 
 {
     class DataAccess
     {
