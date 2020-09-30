@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://secure.softwarekey.com/solo/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://secure.softwarekey.com/solo/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://secure.softwarekey.com/solo/webservices/">
+      <s:element name="GetCustomerDataByAuthor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerDataByAuthorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomerDataByAuthorResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerDataByAuthorS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerDataByAuthorSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomerDataByAuthorSResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerSearchResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerSearchS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerSearchSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerSearchSResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerLoginResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerLoginS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerLoginSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerLoginSResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCustomerDataByAuthorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomerDataByAuthor" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDataByAuthorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerDataByAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDataByAuthorSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomerDataByAuthorS" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDataByAuthorSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerDataByAuthorSResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerSearch" />
+  </wsdl:message>
+  <wsdl:message name="CustomerSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerSearchSSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerSearchS" />
+  </wsdl:message>
+  <wsdl:message name="CustomerSearchSSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerSearchSResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerLogin" />
+  </wsdl:message>
+  <wsdl:message name="CustomerLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerLoginSSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerLoginS" />
+  </wsdl:message>
+  <wsdl:message name="CustomerLoginSSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerLoginSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDataByAuthorSHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDataByAuthorSHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="CustomerSearchSHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CustomerSearchSHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="CustomerLoginSHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CustomerLoginSHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="XmlCustomerServiceSoap">
+    <wsdl:operation name="GetCustomerDataByAuthor">
+      <wsdl:input message="tns:GetCustomerDataByAuthorSoapIn" />
+      <wsdl:output message="tns:GetCustomerDataByAuthorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDataByAuthorS">
+      <wsdl:input message="tns:GetCustomerDataByAuthorSSoapIn" />
+      <wsdl:output message="tns:GetCustomerDataByAuthorSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerSearch">
+      <wsdl:input message="tns:CustomerSearchSoapIn" />
+      <wsdl:output message="tns:CustomerSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerSearchS">
+      <wsdl:input message="tns:CustomerSearchSSoapIn" />
+      <wsdl:output message="tns:CustomerSearchSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerLogin">
+      <wsdl:input message="tns:CustomerLoginSoapIn" />
+      <wsdl:output message="tns:CustomerLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerLoginS">
+      <wsdl:input message="tns:CustomerLoginSSoapIn" />
+      <wsdl:output message="tns:CustomerLoginSSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="XmlCustomerServiceHttpPost">
+    <wsdl:operation name="GetCustomerDataByAuthorS">
+      <wsdl:input message="tns:GetCustomerDataByAuthorSHttpPostIn" />
+      <wsdl:output message="tns:GetCustomerDataByAuthorSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerSearchS">
+      <wsdl:input message="tns:CustomerSearchSHttpPostIn" />
+      <wsdl:output message="tns:CustomerSearchSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerLoginS">
+      <wsdl:input message="tns:CustomerLoginSHttpPostIn" />
+      <wsdl:output message="tns:CustomerLoginSHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="XmlCustomerServiceSoap" type="tns:XmlCustomerServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCustomerDataByAuthor">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/GetCustomerDataByAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDataByAuthorS">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/GetCustomerDataByAuthorS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerSearch">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/CustomerSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerSearchS">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/CustomerSearchS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerLogin">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/CustomerLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerLoginS">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/CustomerLoginS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="XmlCustomerServiceSoap12" type="tns:XmlCustomerServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCustomerDataByAuthor">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/GetCustomerDataByAuthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDataByAuthorS">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/GetCustomerDataByAuthorS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerSearch">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/CustomerSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerSearchS">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/CustomerSearchS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerLogin">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/CustomerLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerLoginS">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/CustomerLoginS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="XmlCustomerServiceHttpPost" type="tns:XmlCustomerServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetCustomerDataByAuthorS">
+      <http:operation location="/GetCustomerDataByAuthorS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerSearchS">
+      <http:operation location="/CustomerSearchS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerLoginS">
+      <http:operation location="/CustomerLoginS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="XmlCustomerService">
+    <wsdl:port name="XmlCustomerServiceSoap" binding="tns:XmlCustomerServiceSoap">
+      <soap:address location="https://license.netlibsecurity.com/solo/webservices/XmlCustomerService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="XmlCustomerServiceSoap12" binding="tns:XmlCustomerServiceSoap12">
+      <soap12:address location="https://license.netlibsecurity.com/solo/webservices/XmlCustomerService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="XmlCustomerServiceHttpPost" binding="tns:XmlCustomerServiceHttpPost">
+      <http:address location="https://license.netlibsecurity.com/solo/webservices/XmlCustomerService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

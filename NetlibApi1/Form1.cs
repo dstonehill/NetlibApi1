@@ -69,5 +69,28 @@ namespace NetlibApi1
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            // If the user entered a Customer  ID
+            if (txtSearchCustomer.Text != "")
+            {
+                // Get the entry. 
+                   txtCustInfo.Text = ApiAccess.searchSWKCustomer(txtSearchCustomer.Text)
+                    }
+
+                }
+            }
+        }
     }
 }

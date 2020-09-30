@@ -26,7 +26,7 @@ namespace NetlibApi1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server= 192.168.86.38;Database=SWKExchange;User Id=swkdata;Password=MollyLinus;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=192.168.86.38;Database=SWKExchange;User Id=swkdata;Password=MollyLinus;")]
         public string custdb {
             get {
                 return ((string)(this["custdb"]));

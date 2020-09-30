@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetlibApi1.CustomerServiceReference;
+using NetlibApi1.XMLCustomerService;
 
 namespace NetlibApi1
 {
@@ -16,7 +17,7 @@ namespace NetlibApi1
         static string userPassword = "77BD524A44574298113DE7D9B5654E0235F3571ABD657DA39A0A53FA671C07B71F9F8E8D9A4D4AFE1232CC9F614C48E68EFFCDD95EA9C72836046EE47B14E133";
 
         /*
-        ** addNewUser
+        ** addSWKCustomer
         */
         public static int addSWKCustomer(string Customer, string First, string Last, string Address1, string Address2, string City, string State, string Zipcode, string Country, string Email, string Password, string Phone, string Fax, string Nickname)
         {
@@ -33,5 +34,23 @@ namespace NetlibApi1
             cx.Close();
             return (result);
         }
-    }
+        
+        /*
+        ** searchSWKCustomer
+        */
+        public static int searchSWKCustomer(string CustID)
+        {
+            // Open the connection to the API
+            XMLCustomerService.XmlCustomerServiceSoapClient cx = new XMLCustomerService.XmlCustomerServiceSoapClient;
+            cx.Open();
+
+            // Insert the data
+            string result = cx.GetCustomerDataByAuthorS(CustID)
+
+
+            // We're done here.
+            cx.Close();
+            return (result);
+            }
+        }
 }
