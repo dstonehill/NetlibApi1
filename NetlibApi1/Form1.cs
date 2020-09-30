@@ -27,7 +27,7 @@ namespace NetlibApi1
 
             if (txtNewCustomer.Text != "")
             { 
-                int newId = ApiAccess.addNewUser(txtNewCustomer.Text, "Joe", "Bigshot", "1 Main St.", "2nd Fl", "New York", "NY", "10010", "USA", "joe@acme.com", "netlibpwd??", "555-1212", "555-1313", "Joey");
+                int newId = ApiAccess.addSWKCustomer(txtNewCustomer.Text, "Joe", "Bigshot", "1 Main St.", "2nd Fl", "New York", "NY", "10010", "USA", "joe@acme.com", "netlibpwd??", "555-1212", "555-1313", "Joey");
                 if (newId < 0)
                     MessageBox.Show("Error adding user. Error was: " + newId.ToString());
                 else
@@ -52,7 +52,7 @@ namespace NetlibApi1
             {
                 // Get the entry. We put the ID after the dash so split on the dash
                 string entry = lstCustomers.Items[lstCustomers.SelectedIndex].ToString();
-                string[] aryParts = entry.Split('-');
+                string[] aryParts = entry.Split('\t');
                 if (aryParts.Length == 2)
                 {
                     string Id = aryParts[1].Trim();

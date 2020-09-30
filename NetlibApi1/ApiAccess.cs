@@ -18,7 +18,7 @@ namespace NetlibApi1
         /*
         ** addNewUser
         */
-        public static int addNewUser(string Customer, string First, string Last, string Address1, string Address2, string City, string State, string Zipcode, string Country, string Email, string Password, string Phone, string Fax, string Nickname)
+        public static int addSWKCustomer(string Customer, string First, string Last, string Address1, string Address2, string City, string State, string Zipcode, string Country, string Email, string Password, string Phone, string Fax, string Nickname)
         {
             // Open the connection to the API
             CustomerServiceReference.CustomerServerSoapClient cx = new CustomerServerSoapClient();
@@ -27,6 +27,7 @@ namespace NetlibApi1
             // Insert the data
             int result = cx.CreateCustomer(author, userID, userPassword, Customer, First, Last, Address1, Address2,
                                            City, State, Zipcode, Country, Email, Password, Phone, Fax, Nickname, false, false);
+          
 
             // We're done here.
             cx.Close();

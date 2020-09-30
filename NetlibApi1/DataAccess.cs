@@ -28,7 +28,7 @@ namespace NetlibApi1
 
             // Command
             DbCommand dbCmd = dbCon.CreateCommand();
-            dbCmd.CommandText = "select AccountID, AccountName from Accounts order by AccountID";
+            dbCmd.CommandText = "select * from Accounts order by AccountID";
 
             // Get the data
             DbDataReader rsData = dbCmd.ExecuteReader();
@@ -39,9 +39,10 @@ namespace NetlibApi1
                     string custName = rsData["AccountName"].ToString();
                     string custID = rsData["AccountID"].ToString();
 
-                    lstCustomers.Items.Add(custName + " - " + custID);
+                    lstCustomers.Items.Add(custName + " \t " + custID);
                 }
             }
+            
             // Close Connection
             dbCon.Close();
 
@@ -50,7 +51,7 @@ namespace NetlibApi1
         /*
          * updateAddress3
          */
-        public static void updateAddress3(string custId, string newAddress)
+        public static void updateAddress3(string AcctId, string newAddress)
         {
             // Open connection to SQL Server
             string connectionString = ConfigurationManager.ConnectionStrings["NetlibApi1.Properties.Settings.custdb"].ConnectionString;
@@ -60,7 +61,7 @@ namespace NetlibApi1
             // Command
             DbCommand dbCmd = dbCon.CreateCommand();
             dbCmd.CommandText = "update Accounts set AddressLine3 = @addr where AccountID = @id ";
-            SqlParameter custParam = new SqlParameter("@id", custId);
+            SqlParameter custParam = new SqlParameter("@id", AcctId);
             dbCmd.Parameters.Add(custParam);
             SqlParameter addressParam = new SqlParameter("@addr", newAddress);
             dbCmd.Parameters.Add(addressParam);
@@ -68,6 +69,8 @@ namespace NetlibApi1
             // Update the data
             dbCmd.ExecuteNonQuery();
 
+            // Close Connection
+            dbCon.Close();
         }
 
 
