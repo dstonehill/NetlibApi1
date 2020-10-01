@@ -13,6 +13,7 @@ namespace NetlibApi1
     {
 
         static int author = 2451871;
+        static string authorstring = Convert.ToString(author);
         static string userID = "4aaf144d-4176-40fc-8aa1-53a1ce6c2db6";
         static string userPassword = "77BD524A44574298113DE7D9B5654E0235F3571ABD657DA39A0A53FA671C07B71F9F8E8D9A4D4AFE1232CC9F614C48E68EFFCDD95EA9C72836046EE47B14E133";
 
@@ -38,14 +39,16 @@ namespace NetlibApi1
         /*
         ** searchSWKCustomer
         */
-        public static int searchSWKCustomer(string CustID)
+        public static string searchSWKCustomer(string CustID)
         {
+            //Build XML
+            string CSearchXML = "<GetCustomerDataByAuthor xmlns=\"\">< AuthorID >" + authorstring + "</AuthorID>< UserID >" + userID + "</UserID><UserPassword>" + userPassword + "</UserPassword>< CustomerID >" + CustID + "</ CustomerID ></ GetCustomerDataByAuthor > ";
             // Open the connection to the API
-            XMLCustomerService.XmlCustomerServiceSoapClient cx = new XMLCustomerService.XmlCustomerServiceSoapClient;
+            XMLCustomerService.XmlCustomerServiceSoapClient cx = new XMLCustomerService.XmlCustomerServiceSoapClient();
             cx.Open();
 
             // Insert the data
-            string result = cx.GetCustomerDataByAuthorS(CustID)
+            string result = cx.GetCustomerDataByAuthorS(CSearchXML)
 
 
             // We're done here.
