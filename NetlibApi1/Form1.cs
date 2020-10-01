@@ -86,12 +86,12 @@ namespace NetlibApi1
             if (txtSearchCustomer.Text != "")
             {
                 // convert to integer and then find customer in soloserver
-                   //int numCustID = Convert.ToInt32(txtSearchCustomer.Text)
-                 
-                   txtCustInfo.Text = ApiAccess.searchSWKCustomer(CustID: txtSearchCustomer.Text)
-                    }
+                //int numCustID = Convert.ToInt32(txtSearchCustomer.Text)
 
-                }
+                txtCustInfo.Text = ApiAccess.searchSWKCustomer(CustID: txtSearchCustomer.Text);
+                
+
+                
             }
         }
     }
