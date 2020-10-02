@@ -73,6 +73,44 @@ namespace NetlibApi1
             dbCon.Close();
         }
 
+        /*
+         * getCustomers - fill the passed-in list box with the names of all of the customers and customer ids
+         * 
+         */
+        public static void getLicenses(ListBox lstLicenses, string AcctID)
+        {
+            lstLicenses.Items.Clear();
+
+            // Open connection to SQL Server
+            string connectionString = ConfigurationManager.ConnectionStrings["NetlibApi1.Properties.Settings.custdb"].ConnectionString;
+            SqlConnection dbCon = new SqlConnection(connectionString); // "Server= 192.168.86.38;Database=SWKExchange;User Id=swkdata;Password=MollyLinus;"
+            dbCon.Open();
+
+            // Command
+            DbCommand dbCmd = dbCon.CreateCommand();
+            dbCmd.CommandText = "select * from SerialNumbers where AccountID = @id ";
+            dbCmd.CommandText += "order by SerialNumber";
+            SqlParameter custParam = new SqlParameter("@id", AcctID);
+            dbCmd.Parameters.Add(custParam);
+
+            // Get the data
+            DbDataReader rsData = dbCmd.ExecuteReader();
+            if (rsData.HasRows)
+            {
+                while (rsData.Read())
+                {
+                    string custName = rsData["AccountName"].ToString();
+                    string custID = rsData["ClientID"].ToString();
+                    string SerialNum = rsData["SerialNumber"].ToString();
+
+                    lstLicenses.Items.Add(custName + " \t " + custID + " \t " + SerialNum);
+                }
+            }
+
+            // Close Connection
+            dbCon.Close();
+
+        }
 
     }
 }

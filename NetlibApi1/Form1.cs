@@ -94,5 +94,19 @@ namespace NetlibApi1
                 
             }
         }
+
+        private void btnLicenses_Click(object sender, EventArgs e)
+        {
+            // If the user entered an Account  ID
+            if (txtAcctID.Text != "")
+            {
+                // search for licenses based on Account ID
+
+                DataAccess.getLicenses(lstLicenses, txtAcctID.Text);
+
+
+
+            }
+        }
     }
 }

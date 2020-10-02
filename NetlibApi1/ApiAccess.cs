@@ -41,14 +41,15 @@ namespace NetlibApi1
         */
         public static string searchSWKCustomer(string CustID)
         {
+            string result = "";
             //Build XML
             string CSearchXML = "<GetCustomerDataByAuthor xmlns=\"\">< AuthorID >" + authorstring + "</AuthorID>< UserID >" + userID + "</UserID><UserPassword>" + userPassword + "</UserPassword>< CustomerID >" + CustID + "</ CustomerID ></ GetCustomerDataByAuthor > ";
             // Open the connection to the API
             XMLCustomerService.XmlCustomerServiceSoapClient cx = new XMLCustomerService.XmlCustomerServiceSoapClient();
             cx.Open();
 
-            // Insert the data
-            string result = cx.GetCustomerDataByAuthorS(CSearchXML);
+            // Search for Customer on SoloServer
+            //string result = cx.GetCustomerDataByAuthorS(CSearchXML);
 
 
             // We're done here.
