@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using NetlibApi1.CustomerServiceReference;
 using NetlibApi1.XMLCustomerService;
 
@@ -12,10 +13,10 @@ namespace NetlibApi1
     class ApiAccess
     {
 
-        static int author = 2451871;
+        const int author = 2451871;
         static string authorstring = author.ToString();
-        static string userID = "4aaf144d-4176-40fc-8aa1-53a1ce6c2db6";
-        static string userPassword = "77BD524A44574298113DE7D9B5654E0235F3571ABD657DA39A0A53FA671C07B71F9F8E8D9A4D4AFE1232CC9F614C48E68EFFCDD95EA9C72836046EE47B14E133";
+        const string userID = "4aaf144d-4176-40fc-8aa1-53a1ce6c2db6";
+        const string userPassword = "77BD524A44574298113DE7D9B5654E0235F3571ABD657DA39A0A53FA671C07B71F9F8E8D9A4D4AFE1232CC9F614C48E68EFFCDD95EA9C72836046EE47B14E133";
 
         /*
         ** addSWKCustomer
@@ -39,17 +40,18 @@ namespace NetlibApi1
         /*
         ** searchSWKCustomer
         */
-        public static string searchSWKCustomer(string CustID)
+        public static XmlNode searchSWKCustomer(string CustID)
         {
-            string result = "";
+            
+            
             //Build XML
-            string CSearchXML = "<GetCustomerDataByAuthor xmlns=\"\">< AuthorID >" + authorstring + "</AuthorID>< UserID >" + userID + "</UserID><UserPassword>" + userPassword + "</UserPassword>< CustomerID >" + CustID + "</ CustomerID ></ GetCustomerDataByAuthor > ";
+            string CSearchXML = "<?xml version='1.0' encoding='UTF-8'?><GetCustomerDataByAuthor xmlns=''><AuthorID>" + authorstring + "</AuthorID><UserID>" + userID + "</UserID><UserPassword>" + userPassword + "</UserPassword><CustomerID>" + CustID + "</CustomerID></GetCustomerDataByAuthor> ";
             // Open the connection to the API
             XMLCustomerService.XmlCustomerServiceSoapClient cx = new XMLCustomerService.XmlCustomerServiceSoapClient();
             cx.Open();
 
             // Search for Customer on SoloServer
-            //string result = cx.GetCustomerDataByAuthorS(CSearchXML);
+            XmlNode result = cx.GetCustomerDataByAuthorS(CSearchXML);
 
 
             // We're done here.

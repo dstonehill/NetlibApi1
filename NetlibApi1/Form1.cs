@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace NetlibApi1
 {
@@ -87,10 +89,14 @@ namespace NetlibApi1
             {
                 // convert to integer and then find customer in soloserver
                 //int numCustID = Convert.ToInt32(txtSearchCustomer.Text)
+                XmlNode result = ApiAccess.searchSWKCustomer(CustID: txtSearchCustomer.Text);
 
-                txtCustInfo.Text = ApiAccess.searchSWKCustomer(CustID: txtSearchCustomer.Text);
-                
-
+                // Check to make sure there was a good node of data back
+                XmlNode custNode = result.SelectSingleNode("Customer/CompanyName");
+                if (custNode == null)
+                    txtCustInfo.Text = "No data found";
+                else
+                    txtCustInfo.Text = custNode.InnerText;                
                 
             }
         }

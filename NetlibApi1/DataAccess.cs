@@ -87,25 +87,26 @@ namespace NetlibApi1
             dbCon.Open();
 
             // Command
-            DbCommand dbCmd = dbCon.CreateCommand();
-            dbCmd.CommandText = "select * from SerialNumbers where AccountID = @id ";
-            dbCmd.CommandText += "order by SerialNumber";
+            DbCommand dbCmdSN = dbCon.CreateCommand();
+            dbCmdSN.CommandText = "select * from SerialNumbers where AccountID = @id ";
+            dbCmdSN.CommandText += "order by SerialNumber";
             SqlParameter custParam = new SqlParameter("@id", AcctID);
-            dbCmd.Parameters.Add(custParam);
+            dbCmdSN.Parameters.Add(custParam);
 
             // Get the data
-            DbDataReader rsData = dbCmd.ExecuteReader();
-            if (rsData.HasRows)
+            DbDataReader rsDataSN = dbCmdSN.ExecuteReader();
+            if (rsDataSN.HasRows)
             {
-                while (rsData.Read())
+                while (rsDataSN.Read())
                 {
-                    string custName = rsData["AccountName"].ToString();
-                    string custID = rsData["ClientID"].ToString();
-                    string SerialNum = rsData["SerialNumber"].ToString();
+                    string custName = rsDataSN["AccountName"].ToString();
+                    string custID = rsDataSN["ClientID"].ToString();
+                    string SerialNum = rsDataSN["SerialNumber"].ToString();
 
                     lstLicenses.Items.Add(custName + " \t " + custID + " \t " + SerialNum);
                 }
             }
+            rsDataSN.Close();
 
             // Close Connection
             dbCon.Close();
