@@ -1,0 +1,1187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://secure.softwarekey.com/solo/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://secure.softwarekey.com/solo/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://secure.softwarekey.com/solo/webservices/">
+      <s:element name="UpdateCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateCheckResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCheckS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCheckSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateCheckSResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InfoCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InfoCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InfoCheckResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InfoCheckS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InfoCheckSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InfoCheckSResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateRegistration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateRegistrationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateRegistrationResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateRegistrationS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateRegistrationSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateRegistrationSResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Register">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterSResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRegistration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRegistrationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateRegistrationResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRegistrationS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRegistrationSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateRegistrationSResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddSResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateActivationFields">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateActivationFieldsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateActivationFieldsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserDefinedFields">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserDefinedFieldsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateUserDefinedFieldsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserDefinedFieldsS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserDefinedFieldsSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateUserDefinedFieldsSResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLicenseCustomData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLicenseCustomDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLicenseCustomDataResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLicenseCustomDataS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLicenseCustomDataSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLicenseCustomDataSResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLicenseCustomData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLicenseCustomDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateLicenseCustomDataResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLicenseCustomDataS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLicenseCustomDataSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateLicenseCustomDataSResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCheck" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCheckSSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCheckS" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCheckSSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCheckSResponse" />
+  </wsdl:message>
+  <wsdl:message name="InfoCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:InfoCheck" />
+  </wsdl:message>
+  <wsdl:message name="InfoCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:InfoCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="InfoCheckSSoapIn">
+    <wsdl:part name="parameters" element="tns:InfoCheckS" />
+  </wsdl:message>
+  <wsdl:message name="InfoCheckSSoapOut">
+    <wsdl:part name="parameters" element="tns:InfoCheckSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateRegistrationSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateRegistration" />
+  </wsdl:message>
+  <wsdl:message name="ValidateRegistrationSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateRegistrationSSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateRegistrationS" />
+  </wsdl:message>
+  <wsdl:message name="ValidateRegistrationSSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateRegistrationSResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSoapIn">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterS" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterSResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRegistrationSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRegistration" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRegistrationSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRegistrationSSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRegistrationS" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRegistrationSSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRegistrationSResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSoapIn">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="AddSoapOut">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSSoapIn">
+    <wsdl:part name="parameters" element="tns:AddS" />
+  </wsdl:message>
+  <wsdl:message name="AddSSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivationFieldsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateActivationFields" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivationFieldsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateActivationFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserDefinedFieldsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserDefinedFields" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserDefinedFieldsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserDefinedFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserDefinedFieldsSSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserDefinedFieldsS" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserDefinedFieldsSSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserDefinedFieldsSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLicenseCustomDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLicenseCustomData" />
+  </wsdl:message>
+  <wsdl:message name="GetLicenseCustomDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLicenseCustomDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLicenseCustomDataSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLicenseCustomDataS" />
+  </wsdl:message>
+  <wsdl:message name="GetLicenseCustomDataSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLicenseCustomDataSResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLicenseCustomDataSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateLicenseCustomData" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLicenseCustomDataSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateLicenseCustomDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLicenseCustomDataSSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateLicenseCustomDataS" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLicenseCustomDataSSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateLicenseCustomDataSResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCheckSHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCheckSHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="InfoCheckSHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InfoCheckSHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ValidateRegistrationSHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateRegistrationSHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRegistrationSHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRegistrationSHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AddSHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddSHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivationFieldsHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateActivationFieldsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserDefinedFieldsSHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserDefinedFieldsSHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetLicenseCustomDataSHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLicenseCustomDataSHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLicenseCustomDataSHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLicenseCustomDataSHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="XmlLicenseServiceSoap">
+    <wsdl:operation name="UpdateCheck">
+      <wsdl:input message="tns:UpdateCheckSoapIn" />
+      <wsdl:output message="tns:UpdateCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckS">
+      <wsdl:input message="tns:UpdateCheckSSoapIn" />
+      <wsdl:output message="tns:UpdateCheckSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InfoCheck">
+      <wsdl:input message="tns:InfoCheckSoapIn" />
+      <wsdl:output message="tns:InfoCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InfoCheckS">
+      <wsdl:input message="tns:InfoCheckSSoapIn" />
+      <wsdl:output message="tns:InfoCheckSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRegistration">
+      <wsdl:input message="tns:ValidateRegistrationSoapIn" />
+      <wsdl:output message="tns:ValidateRegistrationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRegistrationS">
+      <wsdl:input message="tns:ValidateRegistrationSSoapIn" />
+      <wsdl:output message="tns:ValidateRegistrationSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <wsdl:input message="tns:RegisterSoapIn" />
+      <wsdl:output message="tns:RegisterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterS">
+      <wsdl:input message="tns:RegisterSSoapIn" />
+      <wsdl:output message="tns:RegisterSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRegistration">
+      <wsdl:input message="tns:UpdateRegistrationSoapIn" />
+      <wsdl:output message="tns:UpdateRegistrationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRegistrationS">
+      <wsdl:input message="tns:UpdateRegistrationSSoapIn" />
+      <wsdl:output message="tns:UpdateRegistrationSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:input message="tns:AddSoapIn" />
+      <wsdl:output message="tns:AddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddS">
+      <wsdl:input message="tns:AddSSoapIn" />
+      <wsdl:output message="tns:AddSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivationFields">
+      <wsdl:input message="tns:UpdateActivationFieldsSoapIn" />
+      <wsdl:output message="tns:UpdateActivationFieldsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDefinedFields">
+      <wsdl:input message="tns:UpdateUserDefinedFieldsSoapIn" />
+      <wsdl:output message="tns:UpdateUserDefinedFieldsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDefinedFieldsS">
+      <wsdl:input message="tns:UpdateUserDefinedFieldsSSoapIn" />
+      <wsdl:output message="tns:UpdateUserDefinedFieldsSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseCustomData">
+      <wsdl:input message="tns:GetLicenseCustomDataSoapIn" />
+      <wsdl:output message="tns:GetLicenseCustomDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseCustomDataS">
+      <wsdl:input message="tns:GetLicenseCustomDataSSoapIn" />
+      <wsdl:output message="tns:GetLicenseCustomDataSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLicenseCustomData">
+      <wsdl:input message="tns:UpdateLicenseCustomDataSoapIn" />
+      <wsdl:output message="tns:UpdateLicenseCustomDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLicenseCustomDataS">
+      <wsdl:input message="tns:UpdateLicenseCustomDataSSoapIn" />
+      <wsdl:output message="tns:UpdateLicenseCustomDataSSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="XmlLicenseServiceHttpPost">
+    <wsdl:operation name="UpdateCheckS">
+      <wsdl:input message="tns:UpdateCheckSHttpPostIn" />
+      <wsdl:output message="tns:UpdateCheckSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InfoCheckS">
+      <wsdl:input message="tns:InfoCheckSHttpPostIn" />
+      <wsdl:output message="tns:InfoCheckSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRegistrationS">
+      <wsdl:input message="tns:ValidateRegistrationSHttpPostIn" />
+      <wsdl:output message="tns:ValidateRegistrationSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterS">
+      <wsdl:input message="tns:RegisterSHttpPostIn" />
+      <wsdl:output message="tns:RegisterSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRegistrationS">
+      <wsdl:input message="tns:UpdateRegistrationSHttpPostIn" />
+      <wsdl:output message="tns:UpdateRegistrationSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddS">
+      <wsdl:input message="tns:AddSHttpPostIn" />
+      <wsdl:output message="tns:AddSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivationFields">
+      <wsdl:input message="tns:UpdateActivationFieldsHttpPostIn" />
+      <wsdl:output message="tns:UpdateActivationFieldsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDefinedFieldsS">
+      <wsdl:input message="tns:UpdateUserDefinedFieldsSHttpPostIn" />
+      <wsdl:output message="tns:UpdateUserDefinedFieldsSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseCustomDataS">
+      <wsdl:input message="tns:GetLicenseCustomDataSHttpPostIn" />
+      <wsdl:output message="tns:GetLicenseCustomDataSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLicenseCustomDataS">
+      <wsdl:input message="tns:UpdateLicenseCustomDataSHttpPostIn" />
+      <wsdl:output message="tns:UpdateLicenseCustomDataSHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="XmlLicenseServiceSoap" type="tns:XmlLicenseServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateCheck">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckS">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateCheckS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InfoCheck">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/InfoCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InfoCheckS">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/InfoCheckS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRegistration">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/ValidateRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRegistrationS">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/ValidateRegistrationS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterS">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/RegisterS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRegistration">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRegistrationS">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateRegistrationS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddS">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/AddS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivationFields">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateActivationFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDefinedFields">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateUserDefinedFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDefinedFieldsS">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateUserDefinedFieldsS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseCustomData">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/GetLicenseCustomData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseCustomDataS">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/GetLicenseCustomDataS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLicenseCustomData">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateLicenseCustomData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLicenseCustomDataS">
+      <soap:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateLicenseCustomDataS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="XmlLicenseServiceSoap12" type="tns:XmlLicenseServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateCheck">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckS">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateCheckS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InfoCheck">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/InfoCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InfoCheckS">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/InfoCheckS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRegistration">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/ValidateRegistration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRegistrationS">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/ValidateRegistrationS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/Register" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterS">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/RegisterS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRegistration">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateRegistration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRegistrationS">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateRegistrationS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/Add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddS">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/AddS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivationFields">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateActivationFields" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDefinedFields">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateUserDefinedFields" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDefinedFieldsS">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateUserDefinedFieldsS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseCustomData">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/GetLicenseCustomData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseCustomDataS">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/GetLicenseCustomDataS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLicenseCustomData">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateLicenseCustomData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLicenseCustomDataS">
+      <soap12:operation soapAction="http://secure.softwarekey.com/solo/webservices/UpdateLicenseCustomDataS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="XmlLicenseServiceHttpPost" type="tns:XmlLicenseServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="UpdateCheckS">
+      <http:operation location="/UpdateCheckS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InfoCheckS">
+      <http:operation location="/InfoCheckS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateRegistrationS">
+      <http:operation location="/ValidateRegistrationS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterS">
+      <http:operation location="/RegisterS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRegistrationS">
+      <http:operation location="/UpdateRegistrationS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddS">
+      <http:operation location="/AddS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivationFields">
+      <http:operation location="/UpdateActivationFields" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDefinedFieldsS">
+      <http:operation location="/UpdateUserDefinedFieldsS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseCustomDataS">
+      <http:operation location="/GetLicenseCustomDataS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLicenseCustomDataS">
+      <http:operation location="/UpdateLicenseCustomDataS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="XmlLicenseService">
+    <wsdl:port name="XmlLicenseServiceSoap" binding="tns:XmlLicenseServiceSoap">
+      <soap:address location="https://license.netlibsecurity.com/solo/webservices/XmlLicenseService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="XmlLicenseServiceSoap12" binding="tns:XmlLicenseServiceSoap12">
+      <soap12:address location="https://license.netlibsecurity.com/solo/webservices/XmlLicenseService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="XmlLicenseServiceHttpPost" binding="tns:XmlLicenseServiceHttpPost">
+      <http:address location="https://license.netlibsecurity.com/solo/webservices/XmlLicenseService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -62,6 +62,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\XMLLicenseService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -85,6 +90,7 @@
     </Compile>
     <None Include="Connected Services\CustomerServiceReference\customerserver.wsdl" />
     <None Include="Connected Services\XMLCustomerService\XmlCustomerService.wsdl" />
+    <None Include="Connected Services\XMLLicenseService\XmlLicenseService.wsdl" />
     <None Include="Properties\DataSources\System.Xml.XmlNode.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -105,6 +111,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\CustomerServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\XMLCustomerService\" />
+    <WCFMetadataStorage Include="Connected Services\XMLLicenseService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\CustomerServiceReference\customerserver.disco" />
@@ -135,6 +142,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\XMLCustomerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\XMLLicenseService\XmlLicenseService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\XMLLicenseService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\XMLLicenseService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\XMLLicenseService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

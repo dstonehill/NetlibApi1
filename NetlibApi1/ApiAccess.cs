@@ -7,6 +7,8 @@ using System.Windows.Forms;
 using System.Xml;
 using NetlibApi1.CustomerServiceReference;
 using NetlibApi1.XMLCustomerService;
+using NetlibApi1.XMLLicenseService;
+
 
 namespace NetlibApi1
 {
@@ -52,6 +54,40 @@ namespace NetlibApi1
 
             // Search for Customer on SoloServer
             XmlNode result = cx.GetCustomerDataByAuthorS(CSearchXML);
+
+
+            // We're done here.
+            cx.Close();
+            return (result);
+            }
+        
+           /*
+        ** searchSWKLicense
+        */
+        public static XmlNode searchSWKLicense(string LicID)
+        {
+
+
+        //Build XML
+            string LicSearchXML = "<?xml version='1.0' encoding='UTF-8'?>";
+            LicSearchXML+= "<LicenseInfoCheck xmlns=''>";
+            LicSearchXML += "<AuthorID>" + authorstring + "</AuthorID>";
+            LicSearchXML += "<UserID>" + userID + "</UserID>";
+            LicSearchXML += "<UserPassword>" + userPassword + "</UserPassword>";
+            LicSearchXML += "<LicenseID>" + LicID + "</LicenseID>";
+            LicSearchXML += "</LicenseInfoCheck> ";
+
+            //Convert string to XML doc then node
+            XmlDocument LicDoc = new XmlDocument();
+            LicDoc.LoadXml(LicSearchXML);
+            XmlNode LicNode = LicDoc.DocumentElement;
+
+            // Open the connection to the API
+            XMLLicenseService.XmlLicenseServiceSoapClient cx = new XMLLicenseService.XmlLicenseServiceSoapClient();
+            cx.Open();
+
+            // Search for License on SoloServer
+            XmlNode result = cx.InfoCheck(LicNode);
 
 
             // We're done here.

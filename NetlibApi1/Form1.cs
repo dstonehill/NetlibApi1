@@ -114,5 +114,24 @@ namespace NetlibApi1
 
             }
         }
+
+        private void btnSearchLic_Click(object sender, EventArgs e)
+        {
+            // If the user entered a License  ID
+            if (txtSearchLicense.Text != "")
+            {
+                // convert to integer and then find License in soloserver
+                //int numCustID = Convert.ToInt32(txtSearchCustomer.Text)
+                XmlNode result = ApiAccess.searchSWKLicense(LicID: txtSearchLicense.Text);
+
+                // Check to make sure there was a good node of data back
+                XmlNode LicNode = result.SelectSingleNode("LicenseInfoCheck/ProdID");
+                if (LicNode == null)
+                    txtLicInfo.Text = "No data found";
+                else
+                    txtLicInfo.Text = LicNode.InnerText;
+
+            }
+        }
     }
 }

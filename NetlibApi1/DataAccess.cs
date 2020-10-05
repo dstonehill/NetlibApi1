@@ -99,10 +99,12 @@ namespace NetlibApi1
             {
                 while (rsDataSN.Read())
                 {
+                    //assign sql data to variables
                     string custName = rsDataSN["AccountName"].ToString();
                     string custID = rsDataSN["ClientID"].ToString();
                     string SerialNum = rsDataSN["SerialNumber"].ToString();
 
+                    //add items to list
                     lstLicenses.Items.Add(custName + " \t " + custID + " \t " + SerialNum);
                 }
             }

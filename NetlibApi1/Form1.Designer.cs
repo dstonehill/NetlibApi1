@@ -44,6 +44,10 @@
             this.txtAcctID = new System.Windows.Forms.TextBox();
             this.lstLicenses = new System.Windows.Forms.ListBox();
             this.btnLicenses = new System.Windows.Forms.Button();
+            this.txtLicInfo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSearchLicense = new System.Windows.Forms.TextBox();
+            this.btnSearchLic = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -59,7 +63,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(49, 345);
+            this.button2.Location = new System.Drawing.Point(50, 586);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(189, 35);
@@ -72,16 +76,16 @@
             // 
             this.lstCustomers.FormattingEnabled = true;
             this.lstCustomers.ItemHeight = 20;
-            this.lstCustomers.Location = new System.Drawing.Point(49, 403);
+            this.lstCustomers.Location = new System.Drawing.Point(49, 631);
             this.lstCustomers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstCustomers.Name = "lstCustomers";
-            this.lstCustomers.Size = new System.Drawing.Size(670, 144);
+            this.lstCustomers.Size = new System.Drawing.Size(715, 144);
             this.lstCustomers.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 868);
+            this.label1.Location = new System.Drawing.Point(45, 1096);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 20);
@@ -90,7 +94,7 @@
             // 
             // txtAddressLine3
             // 
-            this.txtAddressLine3.Location = new System.Drawing.Point(214, 865);
+            this.txtAddressLine3.Location = new System.Drawing.Point(214, 1093);
             this.txtAddressLine3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAddressLine3.Name = "txtAddressLine3";
             this.txtAddressLine3.Size = new System.Drawing.Size(290, 26);
@@ -98,7 +102,7 @@
             // 
             // butAddress3
             // 
-            this.butAddress3.Location = new System.Drawing.Point(543, 868);
+            this.butAddress3.Location = new System.Drawing.Point(543, 1096);
             this.butAddress3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.butAddress3.Name = "butAddress3";
             this.butAddress3.Size = new System.Drawing.Size(222, 31);
@@ -132,9 +136,9 @@
             this.label3.Location = new System.Drawing.Point(45, 128);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 20);
+            this.label3.Size = new System.Drawing.Size(149, 20);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Customer ID";
+            this.label3.Text = "Customer ID (SWK)";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtSearchCustomer
@@ -162,13 +166,13 @@
             this.txtCustInfo.Location = new System.Drawing.Point(49, 181);
             this.txtCustInfo.Multiline = true;
             this.txtCustInfo.Name = "txtCustInfo";
-            this.txtCustInfo.Size = new System.Drawing.Size(671, 129);
+            this.txtCustInfo.Size = new System.Drawing.Size(715, 129);
             this.txtCustInfo.TabIndex = 11;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 630);
+            this.label4.Location = new System.Drawing.Point(45, 858);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 20);
@@ -177,7 +181,7 @@
             // 
             // txtAcctID
             // 
-            this.txtAcctID.Location = new System.Drawing.Point(214, 630);
+            this.txtAcctID.Location = new System.Drawing.Point(214, 858);
             this.txtAcctID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAcctID.Name = "txtAcctID";
             this.txtAcctID.Size = new System.Drawing.Size(290, 26);
@@ -187,15 +191,15 @@
             // 
             this.lstLicenses.FormattingEnabled = true;
             this.lstLicenses.ItemHeight = 20;
-            this.lstLicenses.Location = new System.Drawing.Point(50, 671);
+            this.lstLicenses.Location = new System.Drawing.Point(50, 899);
             this.lstLicenses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstLicenses.Name = "lstLicenses";
-            this.lstLicenses.Size = new System.Drawing.Size(670, 144);
+            this.lstLicenses.Size = new System.Drawing.Size(714, 144);
             this.lstLicenses.TabIndex = 15;
             // 
             // btnLicenses
             // 
-            this.btnLicenses.Location = new System.Drawing.Point(530, 626);
+            this.btnLicenses.Location = new System.Drawing.Point(575, 851);
             this.btnLicenses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLicenses.Name = "btnLicenses";
             this.btnLicenses.Size = new System.Drawing.Size(189, 35);
@@ -204,11 +208,52 @@
             this.btnLicenses.UseVisualStyleBackColor = true;
             this.btnLicenses.Click += new System.EventHandler(this.btnLicenses_Click);
             // 
+            // txtLicInfo
+            // 
+            this.txtLicInfo.Location = new System.Drawing.Point(48, 387);
+            this.txtLicInfo.Multiline = true;
+            this.txtLicInfo.Name = "txtLicInfo";
+            this.txtLicInfo.Size = new System.Drawing.Size(716, 174);
+            this.txtLicInfo.TabIndex = 20;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(44, 345);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(135, 20);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "License ID (SWK)";
+            // 
+            // txtSearchLicense
+            // 
+            this.txtSearchLicense.Location = new System.Drawing.Point(213, 345);
+            this.txtSearchLicense.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSearchLicense.Name = "txtSearchLicense";
+            this.txtSearchLicense.Size = new System.Drawing.Size(290, 26);
+            this.txtSearchLicense.TabIndex = 18;
+            // 
+            // btnSearchLic
+            // 
+            this.btnSearchLic.Location = new System.Drawing.Point(542, 341);
+            this.btnSearchLic.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSearchLic.Name = "btnSearchLic";
+            this.btnSearchLic.Size = new System.Drawing.Size(222, 35);
+            this.btnSearchLic.TabIndex = 17;
+            this.btnSearchLic.Text = "API - Search License";
+            this.btnSearchLic.UseVisualStyleBackColor = true;
+            this.btnSearchLic.Click += new System.EventHandler(this.btnSearchLic_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1153, 954);
+            this.ClientSize = new System.Drawing.Size(1153, 1150);
+            this.Controls.Add(this.txtLicInfo);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtSearchLicense);
+            this.Controls.Add(this.btnSearchLic);
             this.Controls.Add(this.btnLicenses);
             this.Controls.Add(this.lstLicenses);
             this.Controls.Add(this.label4);
@@ -251,6 +296,10 @@
         private System.Windows.Forms.TextBox txtAcctID;
         private System.Windows.Forms.ListBox lstLicenses;
         private System.Windows.Forms.Button btnLicenses;
+        private System.Windows.Forms.TextBox txtLicInfo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtSearchLicense;
+        private System.Windows.Forms.Button btnSearchLic;
     }
 }
 
