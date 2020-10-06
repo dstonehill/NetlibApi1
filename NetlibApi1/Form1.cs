@@ -125,7 +125,7 @@ namespace NetlibApi1
                 XmlNode result = ApiAccess.searchSWKLicense(LicID: txtSearchLicense.Text);
 
                 // Check to make sure there was a good node of data back
-                XmlNode LicNode = result.SelectSingleNode("LicenseInfoCheck/ProdID");
+                XmlNode LicNode = result.SelectSingleNode("ProductID");
                 if (LicNode == null)
                     txtLicInfo.Text = "No data found";
                 else
