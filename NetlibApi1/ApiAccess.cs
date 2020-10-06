@@ -68,9 +68,9 @@ namespace NetlibApi1
         {
 
 
-        //Build XML
+            //Build XML
             string LicSearchXML = "<?xml version='1.0' encoding='UTF-8'?>";
-            LicSearchXML+= "<LicenseInfoCheck xmlns=''>";
+            LicSearchXML += "<LicenseInfoCheck xmlns=''>";
             LicSearchXML += "<AuthorID>" + authorstring + "</AuthorID>";
             LicSearchXML += "<UserID>" + userID + "</UserID>";
             LicSearchXML += "<UserPassword>" + userPassword + "</UserPassword>";
