@@ -129,7 +129,11 @@ namespace NetlibApi1
 
                 if (LicNode == null)
                     txtLicInfo.Text = "No data found";
-                else 
+                else if (LicNode.InnerText != "0")
+
+                { txtLicInfo.Text = "License not found. Result: " + LicNode.InnerText; }
+                else
+                    
                 {
                     LicNode = result.SelectSingleNode("CustomerID");
                     txtLicInfo.Text = "Company:" + LicNode.InnerText + " \n ";
@@ -144,5 +148,204 @@ namespace NetlibApi1
 
             }
         }
+
+        private void btnGetAccts_Click(object sender, EventArgs e)
+        {
+            int searchtype = 1;
+            Boolean gotosearch = false;
+
+            if (radioAll.Checked)
+            {
+                searchtype = 1;
+                gotosearch = true;
+                if (txtClientID1.Text != "")
+                { 
+                MessageBox.Show("Warning - client ID will be ignored");
+                }
+            }
+            else
+            if (radioSingle.Checked)
+            {
+                if (txtClientID1.Text == "")
+                {
+                    MessageBox.Show("Error - must include From clientID");
+                }
+                else
+                {
+                    searchtype = 2;
+                    gotosearch = true;
+                }
+            }
+            else
+            //radioRange checked
+            {
+                if (txtClientID1.Text == "")
+                {
+                    MessageBox.Show("Error - must include From clientID");
+                }
+                else
+                {
+                    searchtype = 3;
+                    gotosearch = true;
+                }
+            }
+
+            if (gotosearch)
+            {
+                DataAccess.getAccounts(searchtype, txtClientID1.Text, txtClientID2.Text, lstCustomers);
+            }
+
+        }
+
+        private void radioAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioAll.Checked == true)
+            {
+                txtClientID1.Enabled = false;
+                txtClientID2.Enabled = false;
+                if (txtClientID1.Text != "")
+                {
+                    MessageBox.Show("The 'From' Client ID will be ignored");
+                }
+                if (txtClientID2.Text != "")
+                {
+                    MessageBox.Show("The 'To:' Client ID will be ignored");
+                }
+            }
+        }
+
+        private void radioSingle_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioSingle.Checked == true)
+            {
+                txtClientID1.Enabled = true;
+                txtClientID2.Enabled = false;
+                if (txtClientID2.Text != "")
+                {
+                    MessageBox.Show("The 'To:' Client ID will be ignored");
+                }
+            }
+        }
+
+        private void radioRange_CheckedChanged(object sender, EventArgs e)
+        {
+            txtClientID1.Enabled = true;
+            txtClientID2.Enabled = true;
+
+        }
+
+        private void radioAllA_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioAllA.Checked == true)
+            {
+                txtClientID1A.Enabled = false;
+                txtClientID2A.Enabled = false;
+                if (txtClientID1A.Text != "")
+                {
+                    MessageBox.Show("The 'From' Client ID will be ignored");
+                }
+                if (txtClientID2A.Text != "")
+                {
+                    MessageBox.Show("The 'To:' Client ID will be ignored");
+                }
+            }
+        }
+
+        private void radioSingleA_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioSingleA.Checked == true)
+            {
+                txtClientID1A.Enabled = true;
+                txtClientID2A.Enabled = false;
+                if (txtClientID2A.Text != "")
+                {
+                    MessageBox.Show("The 'To:' Client ID will be ignored");
+                }
+            }
+        }
+
+        private void radioRangeA_CheckedChanged(object sender, EventArgs e)
+        {
+            txtClientID1A.Enabled = true;
+            txtClientID2A.Enabled = true;
+
+        }
+
+        private void btnAddCustAndLic_Click(object sender, EventArgs e)
+        {
+            int searchtype = 1;
+            Boolean gotosearch = false;
+
+            if (radioAll.Checked)
+            {
+                searchtype = 1;
+                gotosearch = true;
+                if (txtClientID1A.Text != "")
+                {
+                    MessageBox.Show("Warning - client ID will be ignored");
+                }
+            }
+            else
+            if (radioSingle.Checked)
+            {
+                if (txtClientID1A.Text == "")
+                {
+                    MessageBox.Show("Error - must include From clientID");
+                }
+                else
+                {
+                    searchtype = 2;
+                    gotosearch = true;
+                }
+            }
+            else
+            //radioRange checked
+            {
+                if (txtClientID1A.Text == "")
+                {
+                    MessageBox.Show("Error - must include From clientID");
+                }
+                else
+                {
+                    searchtype = 3;
+                    gotosearch = true;
+                }
+            }
+
+            if (gotosearch)
+            {
+                DataAccess.getAccounts(searchtype, txtClientID1A.Text, txtClientID2A.Text, lstCustomers);
+            }
+
+        }
+
+        private void btnAddLicense_Click(object sender, EventArgs e)
+        {
+            XmlNode result = ApiAccess.AddSWKLicense("1057","1","12/31/2020","5","4","12","a note goes here","4400022",checkBoxTest.Checked);
+
+            // Check to make sure there was a good node of data back
+            XmlNode LicNode = result.SelectSingleNode("ResultCode");
+
+            if (LicNode == null)
+                txtLicInfo.Text = "No data found";
+            else if (LicNode.InnerText != "0")
+
+            { txtLicInfo.Text = "Insert Error: " + LicNode.InnerText; }
+            else
+
+            {
+                LicNode = result.SelectSingleNode("LicenseID");
+                txtLicInfo.Text = "LicenseID: " + LicNode.InnerText + " \n ";
+                LicNode = result.SelectSingleNode("Password");
+                txtLicInfo.Text += " CustPassword: " + LicNode.InnerText;
+                LicNode = result.SelectSingleNode("SerialNumber");
+                txtLicInfo.Text += "Serial Number: " + LicNode.InnerText;
+                LicNode = result.SelectSingleNode("ActivationPassword");
+                txtLicInfo.Text += "ActivationPassword: " + LicNode.InnerText;
+
+            }
+        }
+
+       
     }
 }

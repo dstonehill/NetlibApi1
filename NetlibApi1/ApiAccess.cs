@@ -32,20 +32,20 @@ namespace NetlibApi1
             // Insert the data
             int result = cx.CreateCustomer(author, userID, userPassword, Customer, First, Last, Address1, Address2,
                                            City, State, Zipcode, Country, Email, Password, Phone, Fax, Nickname, false, false);
-          
+
 
             // We're done here.
             cx.Close();
             return (result);
         }
-        
+
         /*
         ** searchSWKCustomer
         */
         public static XmlNode searchSWKCustomer(string CustID)
         {
-            
-            
+
+
             //Build XML
             string CSearchXML = "<?xml version='1.0' encoding='UTF-8'?><GetCustomerDataByAuthor xmlns=''><AuthorID>" + authorstring + "</AuthorID><UserID>" + userID + "</UserID><UserPassword>" + userPassword + "</UserPassword><CustomerID>" + CustID + "</CustomerID></GetCustomerDataByAuthor> ";
             // Open the connection to the API
@@ -59,11 +59,11 @@ namespace NetlibApi1
             // We're done here.
             cx.Close();
             return (result);
-            }
-        
-           /*
-        ** searchSWKLicense
-        */
+        }
+
+        /*
+     ** searchSWKLicense
+     */
         public static XmlNode searchSWKLicense(string LicID)
         {
 
@@ -93,6 +93,57 @@ namespace NetlibApi1
             // We're done here.
             cx.Close();
             return (result);
-            }
+
         }
+
+        /*
+       ** AddSWKLicense
+       */
+        public static XmlNode AddSWKLicense(string OptionID, string Qty, string expire, string ActCount, string DeactCount, string cores, string note, string custID, bool test)
+        {
+
+
+            //Build XML
+            string LicAddXML = "<?xml version='1.0' encoding='UTF-8'?>";
+            LicAddXML += "<LicenseAdd xmlns=''>";
+            LicAddXML += "<AuthorID>" + authorstring + "</AuthorID>";
+            LicAddXML += "<UserID>" + userID + "</UserID>";
+            LicAddXML += "<UserPassword>" + userPassword + "</UserPassword>";
+            LicAddXML += "<ProdOptionID>" + OptionID + "</ProdOptionID>";
+            LicAddXML += "<Quantity>1</Quantity>";
+            LicAddXML += "<UnitPrice>1.00</UnitPrice>";
+            LicAddXML += "<Expiration>" + expire + "</Expiration>";
+            LicAddXML += "<ActivationCount>" + ActCount + "</ActivationCount>";
+            LicAddXML += "<DeactivationCount>" + DeactCount + "</DeactivationCount>";
+            LicAddXML += "<LicenseCounter>" + cores + "</LicenseCounter>";
+            LicAddXML += "<Notes>" + note + "</Notes>";
+            LicAddXML += "<CustomerID>" + custID + "</CustomerID>";
+
+            if (test)
+                LicAddXML += "<IsTestLicense>TRUE</IsTestLicense>";
+            else
+                LicAddXML += "<IsTestLicense>FALSE</IsTestLicense>";
+
+
+            //Convert string to XML doc then node
+            XmlDocument LicDoc = new XmlDocument();
+            LicDoc.LoadXml(LicAddXML);
+            XmlNode LicNode = LicDoc.DocumentElement;
+
+            // Open the connection to the API
+            XMLLicenseService.XmlLicenseServiceSoapClient cx = new XMLLicenseService.XmlLicenseServiceSoapClient();
+            cx.Open();
+
+            // Search for License on SoloServer
+            XmlNode result = cx.Add(LicNode);
+
+
+            // We're done here.
+            cx.Close();
+            return (result);
+        }
+    }
 }
+
+
+

@@ -23,7 +23,7 @@ namespace NetlibApi1
 
             // Open connection to SQL Server
             string connectionString = ConfigurationManager.ConnectionStrings["NetlibApi1.Properties.Settings.custdb"].ConnectionString;
-            SqlConnection dbCon = new SqlConnection(connectionString); // "Server= 192.168.86.38;Database=SWKExchange;User Id=swkdata;Password=MollyLinus;"
+            SqlConnection dbCon = new SqlConnection(connectionString); // "Server= 192.168.86.33;Database=SWKExchange;User Id=swkdata;Password=MollyLinus;"
             dbCon.Open();
 
             // Command
@@ -49,13 +49,68 @@ namespace NetlibApi1
         }
 
         /*
+         * getAccounts by range, single or all - fill the passed-in list box with the names of all of the customers and customer ids
+         * 
+         */
+        public static void getAccounts(int searchtype, string clientid1, string clientid2, ListBox lstCustomers)
+        {
+            lstCustomers.Items.Clear();
+
+            // Open connection to SQL Server
+            string connectionString = ConfigurationManager.ConnectionStrings["NetlibApi1.Properties.Settings.custdb"].ConnectionString;
+            SqlConnection dbCon = new SqlConnection(connectionString); // "Server= 192.168.86.33;Database=SWKExchange;User Id=swkdata;Password=MollyLinus;"
+            dbCon.Open();
+
+            // Command
+            DbCommand dbCmd = dbCon.CreateCommand();
+            // search all
+            if (searchtype == 1)
+            {
+                dbCmd.CommandText = "select * from Accounts order by AccountID";
+            }
+            else
+            //search single
+            if (searchtype == 2)
+            {
+                dbCmd.CommandText = "select * from Accounts";
+                dbCmd.CommandText += " where ClientID = '" + clientid1 + "'";
+                dbCmd.CommandText += " order by ClientID";
+            }
+            else
+            //search Range
+            {
+                dbCmd.CommandText = "select * from Accounts";
+                dbCmd.CommandText += " where ClientID BETWEEN '" + clientid1 + "' and '" + clientid2 + "'";
+                dbCmd.CommandText += " order by ClientID";
+            }
+
+            // Get the data
+            DbDataReader rsData = dbCmd.ExecuteReader();
+            if (rsData.HasRows)
+            {
+                while (rsData.Read())
+                {
+                    string custName = rsData["AccountName"].ToString();
+                    string custID = rsData["ClientID"].ToString();
+                    string Acctid = rsData["AccountID"].ToString();
+
+                    lstCustomers.Items.Add(custName + " \t " + custID + " \t " + Acctid);
+                }
+            }
+
+            // Close Connection
+            dbCon.Close();
+
+        }
+
+        /*
          * updateAddress3
          */
         public static void updateAddress3(string AcctId, string newAddress)
         {
             // Open connection to SQL Server
             string connectionString = ConfigurationManager.ConnectionStrings["NetlibApi1.Properties.Settings.custdb"].ConnectionString;
-            SqlConnection dbCon = new SqlConnection(connectionString); // "Server= 192.168.86.38;Database=SWKExchange;User Id=swkdata;Password=MollyLinus;"
+            SqlConnection dbCon = new SqlConnection(connectionString); // "Server= 192.168.86.33;Database=SWKExchange;User Id=swkdata;Password=MollyLinus;"
             dbCon.Open();
 
             // Command
@@ -74,7 +129,7 @@ namespace NetlibApi1
         }
 
         /*
-         * getCustomers - fill the passed-in list box with the names of all of the customers and customer ids
+         * getLicenses - get all licenses for an AcctID
          * 
          */
         public static void getLicenses(ListBox lstLicenses, string AcctID)
@@ -83,7 +138,7 @@ namespace NetlibApi1
 
             // Open connection to SQL Server
             string connectionString = ConfigurationManager.ConnectionStrings["NetlibApi1.Properties.Settings.custdb"].ConnectionString;
-            SqlConnection dbCon = new SqlConnection(connectionString); // "Server= 192.168.86.38;Database=SWKExchange;User Id=swkdata;Password=MollyLinus;"
+            SqlConnection dbCon = new SqlConnection(connectionString); // "Server= 192.168.86.33;Database=SWKExchange;User Id=swkdata;Password=MollyLinus;"
             dbCon.Open();
 
             // Command
