@@ -14,7 +14,7 @@ namespace NetlibApi1
     {
      
         /*
-         * getCustomers - fill the passed-in list box with the names of all of the customers and customer ids
+         * getCustomers from SQL - fill the passed-in list box with the names of all of the customers and customer ids
          * 
          */
         public static void getCustomers(ListBox lstCustomers)
@@ -49,7 +49,7 @@ namespace NetlibApi1
         }
 
         /*
-         * getAccounts by range, single or all - fill the passed-in list box with the names of all of the customers and customer ids
+         * getAccounts by range, single or allfrom SQL - fill the passed-in list box with the names of all of the customers and customer ids
          * 
          */
         public static void getAccounts(int searchtype, string clientid1, string clientid2, ListBox lstCustomers)

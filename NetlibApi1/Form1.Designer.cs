@@ -69,6 +69,7 @@
             this.btnAddLicense = new System.Windows.Forms.Button();
             this.checkBoxTestA = new System.Windows.Forms.CheckBox();
             this.checkBoxTest = new System.Windows.Forms.CheckBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -171,7 +172,6 @@
             this.txtSearchCustomer.Name = "txtSearchCustomer";
             this.txtSearchCustomer.Size = new System.Drawing.Size(290, 26);
             this.txtSearchCustomer.TabIndex = 9;
-            this.txtSearchCustomer.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnSearch
             // 
@@ -493,11 +493,23 @@
             this.checkBoxTest.Text = "Test?";
             this.checkBoxTest.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(907, 199);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(409, 35);
+            this.button3.TabIndex = 36;
+            this.button3.Text = "API - Test Update Custom Data";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1662, 1150);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.checkBoxTest);
             this.Controls.Add(this.checkBoxTestA);
             this.Controls.Add(this.btnAddLicense);
@@ -588,6 +600,7 @@
         private System.Windows.Forms.Button btnAddLicense;
         private System.Windows.Forms.CheckBox checkBoxTestA;
         private System.Windows.Forms.CheckBox checkBoxTest;
+        private System.Windows.Forms.Button button3;
     }
 }
 

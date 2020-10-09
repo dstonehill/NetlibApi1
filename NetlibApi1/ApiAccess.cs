@@ -123,6 +123,7 @@ namespace NetlibApi1
                 LicAddXML += "<IsTestLicense>TRUE</IsTestLicense>";
             else
                 LicAddXML += "<IsTestLicense>FALSE</IsTestLicense>";
+            LicAddXML += "</LicenseAdd>";
 
 
             //Convert string to XML doc then node
@@ -136,6 +137,90 @@ namespace NetlibApi1
 
             // Search for License on SoloServer
             XmlNode result = cx.Add(LicNode);
+
+
+            // We're done here.
+            cx.Close();
+            return (result);
+        }
+
+        /*
+        ** Update SWKLicense User Defined fields.
+        */
+        public static XmlNode UpdateSWKLicenseFields(string LicID, string LicPwd, string UDF1, string UDF2, string UDF3)
+        {
+
+            //Build XML
+            string LicUpdXML = "<?xml version='1.0' encoding='UTF-8'?>";
+            LicUpdXML += "<UpdateUserDefinedFields xmlns=''>";
+            LicUpdXML += "<AuthorID>" + authorstring + "</AuthorID>";
+            LicUpdXML += "<UserID>" + userID + "</UserID>";
+            LicUpdXML += "<UserPassword>" + userPassword + "</UserPassword>";
+            LicUpdXML += "<LicenseID>" + LicID + "</LicenseID>";
+            LicUpdXML += "<Password>" + LicPwd + "</Password>";
+            LicUpdXML += "<UDefChar1>" + UDF1 + "</UDefChar1>";
+            LicUpdXML += "<UDefChar2>" + UDF2 + "</UDefChar2>";
+            LicUpdXML += "<UDefChar3>" + UDF3 + "</UDefChar3>";
+            LicUpdXML += "</UpdateUserDefinedFields>";
+
+            //Convert string to XML doc then node
+            XmlDocument LicDoc = new XmlDocument();
+            LicDoc.LoadXml(LicUpdXML);
+            XmlNode LicNode = LicDoc.DocumentElement;
+
+            // Open the connection to the API
+            XMLLicenseService.XmlLicenseServiceSoapClient cx = new XMLLicenseService.XmlLicenseServiceSoapClient();
+            cx.Open();
+
+            // Search for License on SoloServer
+            XmlNode result = cx.UpdateUserDefinedFields(LicNode);
+
+
+            // We're done here.
+            cx.Close();
+            return (result);
+        }
+
+        /*
+        ** Update SWKLicense Custom Data.
+        */
+        public static XmlNode UpdateSWKLicenseCData(string LicID, string cdata)
+        {
+
+            /*
+            //Build Custom Data as XML to add into API XML
+            string CDataXML = "";
+            CDataXML += "<?xml version='1.0' encoding='UTF-8'?>";
+            CDataXML += cdata;
+
+            //Convert string to XML doc then node
+            XmlDocument CDataDoc = new XmlDocument();
+            CDataDoc.LoadXml(CDataXML);
+            XmlNode CDataNode = CDataDoc.DocumentElement;
+            */
+
+            //Build API XML
+            string LicUpdXML = "<?xml version='1.0' encoding='UTF-8'?>";
+            LicUpdXML += "<UpdateLicenseCustomData xmlns=''>";
+            LicUpdXML += "<AuthorID>" + authorstring + "</AuthorID>";
+            LicUpdXML += "<UserID>" + userID + "</UserID>";
+            LicUpdXML += "<UserPassword>" + userPassword + "</UserPassword>";
+            LicUpdXML += "<LicenseID>" + LicID + "</LicenseID>";
+            LicUpdXML += "<LicenseCustomData>" + cdata + "</LicenseCustomData>";
+            LicUpdXML += "<Format>XML</Format>";
+            LicUpdXML += "</UpdateLicenseCustomData>";
+
+            //Convert string to XML doc then node
+            XmlDocument LicDoc = new XmlDocument();
+            LicDoc.LoadXml(LicUpdXML);
+            XmlNode LicNode = LicDoc.DocumentElement;
+
+            // Open the connection to the API
+            XMLLicenseService.XmlLicenseServiceSoapClient cx = new XMLLicenseService.XmlLicenseServiceSoapClient();
+            cx.Open();
+
+            // Search for License on SoloServer
+            XmlNode result = cx.UpdateLicenseCustomData(LicNode);
 
 
             // We're done here.

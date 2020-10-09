@@ -72,10 +72,6 @@ namespace NetlibApi1
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -321,31 +317,85 @@ namespace NetlibApi1
 
         private void btnAddLicense_Click(object sender, EventArgs e)
         {
-            XmlNode result = ApiAccess.AddSWKLicense("1057","1","12/31/2020","5","4","12","a note goes here","4400022",checkBoxTest.Checked);
+            
+            //AddSWKLicense(string OptionID, string Qty, string expire, string ActCount, string DeactCount, string cores, string note, string custID, bool test)
+            XmlNode resultAdd = ApiAccess.AddSWKLicense("1057","1","12/31/2021","5","4","12","a note goes here","4400022",checkBoxTest.Checked);
 
             // Check to make sure there was a good node of data back
-            XmlNode LicNode = result.SelectSingleNode("ResultCode");
+            XmlNode LicNode = resultAdd.SelectSingleNode("ResultCode");
 
             if (LicNode == null)
                 txtLicInfo.Text = "No data found";
             else if (LicNode.InnerText != "0")
-
-            { txtLicInfo.Text = "Insert Error: " + LicNode.InnerText; }
+                txtLicInfo.Text = "Insert Error: " + LicNode.InnerText;
             else
 
-            {
-                LicNode = result.SelectSingleNode("LicenseID");
-                txtLicInfo.Text = "LicenseID: " + LicNode.InnerText + " \n ";
-                LicNode = result.SelectSingleNode("Password");
-                txtLicInfo.Text += " CustPassword: " + LicNode.InnerText;
-                LicNode = result.SelectSingleNode("SerialNumber");
-                txtLicInfo.Text += "Serial Number: " + LicNode.InnerText;
-                LicNode = result.SelectSingleNode("ActivationPassword");
-                txtLicInfo.Text += "ActivationPassword: " + LicNode.InnerText;
+                {
+                    LicNode = resultAdd.SelectSingleNode("LicenseID");
+                    txtLicInfo.Text = "LicenseID: " + LicNode.InnerText + " \n ";
+                    string LicID = LicNode.InnerText;
+                    LicNode = resultAdd.SelectSingleNode("ActivationPassword");
+                    txtLicInfo.Text += "ActivationPassword: " + LicNode.InnerText;
+                    string LicPwd = LicNode.InnerText;
+
+                    // update User Defined fields
+                    //UpdateSWKLicenseFields(string LicID, string LicPwd, string UDF1, string UDF2, string UDF3)
+                    XmlNode resultUpdUDF = ApiAccess.UpdateSWKLicenseFields(LicID, LicPwd, "Previous Serial Number: 001-204290-001-001-0", "udf2", "udf3");
+
+                    //Check results of update
+                    XmlNode LicUpdUDF = resultUpdUDF.SelectSingleNode("ResultCode");
+                    if (LicUpdUDF == null)
+                        txtLicInfo.Text += " UDF result: null";
+                    else if (LicUpdUDF.InnerText != "0")
+                        txtLicInfo.Text += " UDF Error: " + LicUpdUDF.InnerText;
+                    else
+                        txtLicInfo.Text += " UDF Added";
+
+                    // update CustomData
+                    //UpdateSWKLicenseCData(string LicID, string cdata)
+
+                    //build Custom Data
+                    string inputCData = "<CustomParameters><IsLease>False</IsLease><IsExecsOverride>True</IsExecsOverride><ExecsAllowed>x</ExecsAllowed><KeyLength>256</KeyLength><Instances>31</Instances><MaxSize>65536</MaxSize><NumProcesses>63</NumProcesses><NumFiles>128</NumFiles><IsGUIsAllowed>True</IsGUIsAllowed><IsCLIAllowed>False</IsCLIAllowed><IsTimeLtd>False</IsTimeLtd></CustomParameters>";
+
+                    // make the call to update custom data
+                    XmlNode resultUpdCData = ApiAccess.UpdateSWKLicenseCData(LicID, inputCData);
+
+                    //Check results of update
+                    XmlNode LicUpdCData = resultUpdCData.SelectSingleNode("ResultCode");
+                    if (LicUpdCData == null)
+                        txtLicInfo.Text += " CData result: null";
+                    else if (LicUpdCData.InnerText != "0")
+                        txtLicInfo.Text +=  " CData Error: " + LicUpdCData.InnerText;
+                    else
+                        txtLicInfo.Text += " CData Added";
+
 
             }
+
         }
 
-       
+        // testing adding Custom Data to a license
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //License ID hardcoded for now
+            string LicID = "6000090";
+            txtLicInfo.Text = "License ID:" + LicID;
+
+            //build Custom Data
+            string inputCData = "<CustomParameters><IsLease>False</IsLease><IsExecsOverride>False</IsExecsOverride><KeyLength>256</KeyLength><Instances>31</Instances><MaxSize>65536</MaxSize><NumProcesses>63</NumProcesses><NumFiles>128</NumFiles><IsGUIsAllowed>True</IsGUIsAllowed><IsCLIAllowed>True</IsCLIAllowed><IsTimeLtd>False</IsTimeLtd></CustomParameters>";
+
+            // make the call to update custom data
+            XmlNode resultUpdCData = ApiAccess.UpdateSWKLicenseCData(LicID, inputCData);
+
+            //Check results of update
+            XmlNode LicUpdCData = resultUpdCData.SelectSingleNode("ResultCode");
+            if (LicUpdCData == null)
+                txtLicInfo.Text += " CData result: null";
+            else if (LicUpdCData.InnerText != "0")
+                txtLicInfo.Text += " CData Error: " + LicUpdCData.InnerText;
+            else
+                txtLicInfo.Text += " CData Added";
+
+        }
     }
 }
