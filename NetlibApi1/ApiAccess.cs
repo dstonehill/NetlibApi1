@@ -61,6 +61,39 @@ namespace NetlibApi1
             return (result);
         }
 
+         /*
+         ** searchSWKCustName
+         */
+        public static XmlNode searchSWKCustName(string CustName)
+        {
+            //Build XML
+            string CSearchXML = "<?xml version='1.0' encoding='UTF-8'?>";
+            CSearchXML += "<CustomerSearch xmlns=''>";
+            CSearchXML += "<AuthorID>" + authorstring + "</AuthorID>";
+            CSearchXML += "<UserID>" + userID + "</UserID>";
+            CSearchXML += "<UserPassword>" + userPassword + "</UserPassword>";
+            CSearchXML += "<CompanyName>" + CustName + "</CompanyName>";
+            CSearchXML += "</CustomerSearch> ";
+
+            //Convert string to XML doc then node
+            XmlDocument CustDoc = new XmlDocument();
+            CustDoc.LoadXml(CSearchXML);
+            XmlNode CustNode = CustDoc.DocumentElement;
+
+            // Open the connection to the API
+            XMLCustomerService.XmlCustomerServiceSoapClient cx = new XMLCustomerService.XmlCustomerServiceSoapClient();
+            cx.Open();
+
+            // Search for Customer on SoloServer
+            XmlNode result = cx.CustomerSearch(CustNode);
+
+
+            // We're done here.
+            cx.Close();
+            return (result);
+        }
+
+
         /*
      ** searchSWKLicense
      */

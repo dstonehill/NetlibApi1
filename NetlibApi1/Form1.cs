@@ -397,5 +397,44 @@ namespace NetlibApi1
                 txtLicInfo.Text += " CData Added";
 
         }
+
+        private void btnSearchName_Click(object sender, EventArgs e)
+        {
+
+            // If the user entered a Customer  ID
+            if (txtSearchName.Text != "")
+            {
+                XmlNode result = ApiAccess.searchSWKCustName(txtSearchName.Text);
+
+                // Check to make sure there was a good node of data back
+                XmlNode custNode = result.SelectSingleNode("ResultCode");
+
+                if (custNode == null)
+                    txtCustInfo.Text = "No data found";
+                else if (custNode.InnerText != "0")
+                {
+                    txtCustInfo.Text = "Customer Name not found" + txtSearchName.Text; 
+                }
+                else
+                { 
+                    custNode = result.SelectSingleNode("Customer/CompanyName");
+                    txtCustInfo.Text = "Company: " + custNode.InnerText;
+                    custNode = result.SelectSingleNode("Customer/CustomerID");
+                    txtCustInfo.Text += " Customer ID: " + custNode.InnerText;
+
+                }
+
+            }
+        }
+
+        private void btnTest1_Click(object sender, EventArgs e)
+        {
+            DataAccess.updateCustSWKData("00130000011dtto1", "10", "apassword", "newmail", "Modify");
+        }
+
+        private void btnTest2_Click(object sender, EventArgs e)
+        {
+            DataAccess.updateLicSWKData("a063000000V7LSi", "410", "apassword1", "Modify");
+        }
     }
 }

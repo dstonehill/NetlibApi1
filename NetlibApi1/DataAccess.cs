@@ -128,6 +128,48 @@ namespace NetlibApi1
             dbCon.Close();
         }
 
+
+        /*
+         * Update SWK fields on Customer SQL Record
+         */
+        public static void updateCustSWKData(string AcctId, string newSWId, string newSWPwd, string newSWEmail, string UpdMode)
+        {
+            // Open connection to SQL Server
+            string connectionString = ConfigurationManager.ConnectionStrings["NetlibApi1.Properties.Settings.custdb"].ConnectionString;
+            SqlConnection dbCon = new SqlConnection(connectionString); // "Server= 192.168.86.33;Database=SWKExchange;User Id=swkdata;Password=MollyLinus;"
+            dbCon.Open();
+
+            // Command
+            DbCommand dbCmd = dbCon.CreateCommand();
+            dbCmd.CommandText = "update Accounts set ";
+            dbCmd.CommandText += " SWCustomerID = @CustID,";
+            dbCmd.CommandText += " SWCustomerPW = @CustPW,";
+
+            if (UpdMode == "Insert")
+            {
+                dbCmd.CommandText += " SWEmail = @CustEmail,";
+                dbCmd.CommandText += " SWDateInserted = GETDATE(),";
+            }
+            dbCmd.CommandText += " SWDateModified = GETDATE()";
+            dbCmd.CommandText += " where AccountID = @id ";
+            
+            // set parameters
+            SqlParameter IDParam = new SqlParameter("@id", AcctId);
+            dbCmd.Parameters.Add(IDParam);
+            SqlParameter CustIDParam = new SqlParameter("@CustID", newSWId);
+            dbCmd.Parameters.Add(CustIDParam);
+            SqlParameter CustPWParam = new SqlParameter("@CustPW", newSWPwd);
+            dbCmd.Parameters.Add(CustPWParam);
+            SqlParameter EmailParam = new SqlParameter("@CustEmail", newSWEmail);
+            dbCmd.Parameters.Add(EmailParam);
+
+            // Update the data
+            dbCmd.ExecuteNonQuery();
+
+            // Close Connection
+            dbCon.Close();
+        }
+
         /*
          * getLicenses - get all licenses for an AcctID
          * 
@@ -169,6 +211,45 @@ namespace NetlibApi1
             dbCon.Close();
 
         }
+
+         /*
+         * Update SWK fields on License/SerialNumber SQL Record
+         */
+        public static void updateLicSWKData(string SerialNumId, string newSWId, string newSWPwd, string UpdMode)
+        {
+            // Open connection to SQL Server
+            string connectionString = ConfigurationManager.ConnectionStrings["NetlibApi1.Properties.Settings.custdb"].ConnectionString;
+            SqlConnection dbCon = new SqlConnection(connectionString); // "Server= 192.168.86.33;Database=SWKExchange;User Id=swkdata;Password=MollyLinus;"
+            dbCon.Open();
+
+            // Command
+            DbCommand dbCmd = dbCon.CreateCommand();
+            dbCmd.CommandText = "update SerialNumbers set ";
+            dbCmd.CommandText += " SWLicenseID = @LicID,";
+            dbCmd.CommandText += " SWLicensePW = @LicPW,";
+
+            if (UpdMode == "Insert")
+            {
+                dbCmd.CommandText += " SWDateInserted = GETDATE(),";
+            }
+            dbCmd.CommandText += " SWDateModified = GETDATE()";
+            dbCmd.CommandText += " where SerialNumberID = @id ";
+
+            // set parameters
+            SqlParameter LicIDParam = new SqlParameter("@LicID", newSWId);
+            dbCmd.Parameters.Add(LicIDParam);
+            SqlParameter LicPWParam = new SqlParameter("@LicPW", newSWPwd);
+            dbCmd.Parameters.Add(LicPWParam);
+            SqlParameter IDParam = new SqlParameter("@id", SerialNumId);
+            dbCmd.Parameters.Add(IDParam);
+
+            // Update the data
+            dbCmd.ExecuteNonQuery();
+
+            // Close Connection
+            dbCon.Close();
+        }
+
 
     }
 }
