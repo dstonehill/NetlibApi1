@@ -122,7 +122,10 @@ namespace NetlibApi1
             dbCmd.Parameters.Add(addressParam);
 
             // Update the data
-            dbCmd.ExecuteNonQuery();
+            int result = dbCmd.ExecuteNonQuery();
+
+            if (result ==0)
+                
 
             // Close Connection
             dbCon.Close();
@@ -132,7 +135,7 @@ namespace NetlibApi1
         /*
          * Update SWK fields on Customer SQL Record
          */
-        public static void updateCustSWKData(string AcctId, string newSWId, string newSWPwd, string newSWEmail, string UpdMode)
+        public static string updateCustSWKData(string AcctId, string newSWId, string newSWPwd, string newSWEmail, string UpdMode)
         {
             // Open connection to SQL Server
             string connectionString = ConfigurationManager.ConnectionStrings["NetlibApi1.Properties.Settings.custdb"].ConnectionString;
@@ -164,10 +167,20 @@ namespace NetlibApi1
             dbCmd.Parameters.Add(EmailParam);
 
             // Update the data
-            dbCmd.ExecuteNonQuery();
+           int queryresult = dbCmd.ExecuteNonQuery();
+           string updateresult = "";
+
+            if (queryresult == 0)
+            { updateresult = "Cust SWK - no rows updated"; }
+            else if (queryresult > 1)
+            { updateresult = "Cust SWK - too many rows updated"; }
+            else
+            { updateresult = "Cust SWk updated"; }
 
             // Close Connection
             dbCon.Close();
+
+            return (updateresult);
         }
 
         /*
@@ -215,7 +228,7 @@ namespace NetlibApi1
          /*
          * Update SWK fields on License/SerialNumber SQL Record
          */
-        public static void updateLicSWKData(string SerialNumId, string newSWId, string newSWPwd, string UpdMode)
+        public static string updateLicSWKData(string SerialNumId, string newSWId, string newSWPwd, string UpdMode)
         {
             // Open connection to SQL Server
             string connectionString = ConfigurationManager.ConnectionStrings["NetlibApi1.Properties.Settings.custdb"].ConnectionString;
@@ -244,10 +257,20 @@ namespace NetlibApi1
             dbCmd.Parameters.Add(IDParam);
 
             // Update the data
-            dbCmd.ExecuteNonQuery();
+            int queryresult = dbCmd.ExecuteNonQuery();
+            string updateresult = "";
+
+            if (queryresult == 0)
+            { updateresult = "Lic SWK - no rows updated"; }
+            else if (queryresult > 1)
+            { updateresult = "Lic SWK - too many rows updated"; }
+            else
+            { updateresult = "Lic SWk updated"; }
 
             // Close Connection
             dbCon.Close();
+
+            return (updateresult);
         }
 
 

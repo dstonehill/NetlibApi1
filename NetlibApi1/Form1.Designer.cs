@@ -108,7 +108,7 @@
             this.lstCustomers.Location = new System.Drawing.Point(50, 734);
             this.lstCustomers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstCustomers.Name = "lstCustomers";
-            this.lstCustomers.Size = new System.Drawing.Size(715, 144);
+            this.lstCustomers.Size = new System.Drawing.Size(1457, 144);
             this.lstCustomers.TabIndex = 2;
             // 
             // label1
@@ -222,7 +222,7 @@
             this.lstLicenses.Location = new System.Drawing.Point(51, 1002);
             this.lstLicenses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstLicenses.Name = "lstLicenses";
-            this.lstLicenses.Size = new System.Drawing.Size(714, 144);
+            this.lstLicenses.Size = new System.Drawing.Size(1456, 144);
             this.lstLicenses.TabIndex = 15;
             // 
             // btnLicenses
@@ -275,7 +275,7 @@
             // 
             // btnGetAccts
             // 
-            this.btnGetAccts.Location = new System.Drawing.Point(1011, 749);
+            this.btnGetAccts.Location = new System.Drawing.Point(1904, 759);
             this.btnGetAccts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGetAccts.Name = "btnGetAccts";
             this.btnGetAccts.Size = new System.Drawing.Size(189, 35);
@@ -289,7 +289,7 @@
             this.groupBox1.Controls.Add(this.radioRange);
             this.groupBox1.Controls.Add(this.radioSingle);
             this.groupBox1.Controls.Add(this.radioAll);
-            this.groupBox1.Location = new System.Drawing.Point(887, 735);
+            this.groupBox1.Location = new System.Drawing.Point(1780, 745);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(107, 100);
             this.groupBox1.TabIndex = 22;
@@ -333,7 +333,7 @@
             // txtClientID2
             // 
             this.txtClientID2.Enabled = false;
-            this.txtClientID2.Location = new System.Drawing.Point(1238, 701);
+            this.txtClientID2.Location = new System.Drawing.Point(2131, 711);
             this.txtClientID2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtClientID2.Name = "txtClientID2";
             this.txtClientID2.Size = new System.Drawing.Size(158, 26);
@@ -342,7 +342,7 @@
             // txtClientID1
             // 
             this.txtClientID1.Enabled = false;
-            this.txtClientID1.Location = new System.Drawing.Point(1011, 701);
+            this.txtClientID1.Location = new System.Drawing.Point(1904, 711);
             this.txtClientID1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtClientID1.Name = "txtClientID1";
             this.txtClientID1.Size = new System.Drawing.Size(157, 26);
@@ -351,7 +351,7 @@
             // labelClientID1
             // 
             this.labelClientID1.AutoSize = true;
-            this.labelClientID1.Location = new System.Drawing.Point(883, 704);
+            this.labelClientID1.Location = new System.Drawing.Point(1776, 714);
             this.labelClientID1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelClientID1.Name = "labelClientID1";
             this.labelClientID1.Size = new System.Drawing.Size(111, 20);
@@ -361,7 +361,7 @@
             // labelClientID2
             // 
             this.labelClientID2.AutoSize = true;
-            this.labelClientID2.Location = new System.Drawing.Point(1199, 704);
+            this.labelClientID2.Location = new System.Drawing.Point(2092, 714);
             this.labelClientID2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelClientID2.Name = "labelClientID2";
             this.labelClientID2.Size = new System.Drawing.Size(31, 20);
@@ -371,7 +371,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1199, 972);
+            this.label6.Location = new System.Drawing.Point(2092, 982);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(31, 20);
@@ -381,7 +381,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(883, 972);
+            this.label7.Location = new System.Drawing.Point(1776, 982);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(111, 20);
@@ -391,7 +391,7 @@
             // txtClientID1A
             // 
             this.txtClientID1A.Enabled = false;
-            this.txtClientID1A.Location = new System.Drawing.Point(1011, 969);
+            this.txtClientID1A.Location = new System.Drawing.Point(1904, 979);
             this.txtClientID1A.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtClientID1A.Name = "txtClientID1A";
             this.txtClientID1A.Size = new System.Drawing.Size(157, 26);
@@ -400,7 +400,7 @@
             // txtClientID2A
             // 
             this.txtClientID2A.Enabled = false;
-            this.txtClientID2A.Location = new System.Drawing.Point(1238, 969);
+            this.txtClientID2A.Location = new System.Drawing.Point(2131, 979);
             this.txtClientID2A.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtClientID2A.Name = "txtClientID2A";
             this.txtClientID2A.Size = new System.Drawing.Size(158, 26);
@@ -411,7 +411,7 @@
             this.groupBox2.Controls.Add(this.radioRangeA);
             this.groupBox2.Controls.Add(this.radioSingleA);
             this.groupBox2.Controls.Add(this.radioAllA);
-            this.groupBox2.Location = new System.Drawing.Point(887, 1003);
+            this.groupBox2.Location = new System.Drawing.Point(1780, 1013);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(107, 100);
             this.groupBox2.TabIndex = 28;
@@ -454,7 +454,7 @@
             // 
             // btnAddCustAndLic
             // 
-            this.btnAddCustAndLic.Location = new System.Drawing.Point(1011, 1017);
+            this.btnAddCustAndLic.Location = new System.Drawing.Point(1904, 1027);
             this.btnAddCustAndLic.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddCustAndLic.Name = "btnAddCustAndLic";
             this.btnAddCustAndLic.Size = new System.Drawing.Size(276, 35);
@@ -465,7 +465,7 @@
             // 
             // btnAddLicense
             // 
-            this.btnAddLicense.Location = new System.Drawing.Point(907, 65);
+            this.btnAddLicense.Location = new System.Drawing.Point(1800, 75);
             this.btnAddLicense.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddLicense.Name = "btnAddLicense";
             this.btnAddLicense.Size = new System.Drawing.Size(222, 35);
@@ -479,7 +479,7 @@
             this.checkBoxTestA.AutoSize = true;
             this.checkBoxTestA.Checked = true;
             this.checkBoxTestA.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxTestA.Location = new System.Drawing.Point(1331, 1027);
+            this.checkBoxTestA.Location = new System.Drawing.Point(2224, 1037);
             this.checkBoxTestA.Name = "checkBoxTestA";
             this.checkBoxTestA.Size = new System.Drawing.Size(75, 24);
             this.checkBoxTestA.TabIndex = 34;
@@ -491,7 +491,7 @@
             this.checkBoxTest.AutoSize = true;
             this.checkBoxTest.Checked = true;
             this.checkBoxTest.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxTest.Location = new System.Drawing.Point(1154, 76);
+            this.checkBoxTest.Location = new System.Drawing.Point(2047, 86);
             this.checkBoxTest.Name = "checkBoxTest";
             this.checkBoxTest.Size = new System.Drawing.Size(75, 24);
             this.checkBoxTest.TabIndex = 35;
@@ -500,7 +500,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(908, 302);
+            this.button3.Location = new System.Drawing.Point(1801, 312);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(409, 35);
@@ -540,7 +540,7 @@
             // 
             // btnTest1
             // 
-            this.btnTest1.Location = new System.Drawing.Point(908, 382);
+            this.btnTest1.Location = new System.Drawing.Point(1801, 392);
             this.btnTest1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTest1.Name = "btnTest1";
             this.btnTest1.Size = new System.Drawing.Size(222, 31);
@@ -551,7 +551,7 @@
             // 
             // btnTest2
             // 
-            this.btnTest2.Location = new System.Drawing.Point(908, 458);
+            this.btnTest2.Location = new System.Drawing.Point(1801, 468);
             this.btnTest2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTest2.Name = "btnTest2";
             this.btnTest2.Size = new System.Drawing.Size(222, 31);
@@ -564,7 +564,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1662, 1280);
+            this.ClientSize = new System.Drawing.Size(2360, 1280);
             this.Controls.Add(this.btnTest2);
             this.Controls.Add(this.btnTest1);
             this.Controls.Add(this.label8);

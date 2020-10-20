@@ -272,7 +272,7 @@ namespace NetlibApi1
             int searchtype = 1;
             Boolean gotosearch = false;
 
-            if (radioAll.Checked)
+            if (radioAllA.Checked)
             {
                 searchtype = 1;
                 gotosearch = true;
@@ -282,7 +282,7 @@ namespace NetlibApi1
                 }
             }
             else
-            if (radioSingle.Checked)
+            if (radioSingleA.Checked)
             {
                 if (txtClientID1A.Text == "")
                 {
@@ -310,7 +310,7 @@ namespace NetlibApi1
 
             if (gotosearch)
             {
-                DataAccess.getAccounts(searchtype, txtClientID1A.Text, txtClientID2A.Text, lstCustomers);
+                ImportData.procAccounts(searchtype, txtClientID1A.Text, txtClientID2A.Text, lstCustomers, lstLicenses, checkBoxTestA.Checked);
             }
 
         }
@@ -319,7 +319,7 @@ namespace NetlibApi1
         {
             
             //AddSWKLicense(string OptionID, string Qty, string expire, string ActCount, string DeactCount, string cores, string note, string custID, bool test)
-            XmlNode resultAdd = ApiAccess.AddSWKLicense("1057","1","12/31/2021","5","4","12","a note goes here","4400022",checkBoxTest.Checked);
+            XmlNode resultAdd = ApiAccess.AddSWKLicense("1058","1","07/31/2021","5","4","12","a note goes here","4400022","", checkBoxTest.Checked);
 
             // Check to make sure there was a good node of data back
             XmlNode LicNode = resultAdd.SelectSingleNode("ResultCode");

@@ -132,7 +132,7 @@ namespace NetlibApi1
         /*
        ** AddSWKLicense
        */
-        public static XmlNode AddSWKLicense(string OptionID, string Qty, string expire, string ActCount, string DeactCount, string cores, string note, string custID, bool test)
+        public static XmlNode AddSWKLicense(string OptionID, string Qty, string expire, string ActCount, string DeactCount, string cores, string note, string custID, string LicName, bool test)
         {
 
 
@@ -151,6 +151,7 @@ namespace NetlibApi1
             LicAddXML += "<LicenseCounter>" + cores + "</LicenseCounter>";
             LicAddXML += "<Notes>" + note + "</Notes>";
             LicAddXML += "<CustomerID>" + custID + "</CustomerID>";
+            LicAddXML += "<LicenseeName>" + LicName + "</LicenseeName>";
 
             if (test)
                 LicAddXML += "<IsTestLicense>TRUE</IsTestLicense>";
