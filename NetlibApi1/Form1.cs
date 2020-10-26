@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.IO;    
 
 namespace NetlibApi1
 {
@@ -319,7 +320,7 @@ namespace NetlibApi1
         {
             
             //AddSWKLicense(string OptionID, string Qty, string expire, string ActCount, string DeactCount, string cores, string note, string custID, bool test)
-            XmlNode resultAdd = ApiAccess.AddSWKLicense("1058","1","07/31/2021","5","4","12","a note goes here","4400022","", checkBoxTest.Checked);
+            XmlNode resultAdd = ApiAccess.AddSWKLicense("1036","3","12/31/2020","1","0","12","a note goes here", "4400028", "", checkBoxTest.Checked);
 
             // Check to make sure there was a good node of data back
             XmlNode LicNode = resultAdd.SelectSingleNode("ResultCode");
@@ -355,7 +356,7 @@ namespace NetlibApi1
                     //UpdateSWKLicenseCData(string LicID, string cdata)
 
                     //build Custom Data
-                    string inputCData = "<CustomParameters><IsLease>False</IsLease><IsExecsOverride>True</IsExecsOverride><ExecsAllowed>x</ExecsAllowed><KeyLength>256</KeyLength><Instances>31</Instances><MaxSize>65536</MaxSize><NumProcesses>63</NumProcesses><NumFiles>128</NumFiles><IsGUIsAllowed>True</IsGUIsAllowed><IsCLIAllowed>False</IsCLIAllowed><IsTimeLtd>False</IsTimeLtd></CustomParameters>";
+                    string inputCData = "<CustomParameters><IsServer>True</IsServer><IsExecsOverride>False</IsExecsOverride><ExecsAllowed>Example String Value</ExecsAllowed><SQLEdition>4</SQLEdition><IsWholeDB>True</IsWholeDB><IsColumn>True</IsColumn><KeyLength>256</KeyLength><IsFolder>True</IsFolder><Instances>31</Instances><SysIdent>True</SysIdent></CustomParameters>";
 
                     // make the call to update custom data
                     XmlNode resultUpdCData = ApiAccess.UpdateSWKLicenseCData(LicID, inputCData);
@@ -434,7 +435,44 @@ namespace NetlibApi1
 
         private void btnTest2_Click(object sender, EventArgs e)
         {
-            DataAccess.updateLicSWKData("a063000000V7LSi", "410", "apassword1", "Modify");
+            DataAccess.updateLicSWKData("a063000000V7LSi","", "410", "apassword1", "Modify");
+        }
+
+        private void btnTestDate_Click(object sender, EventArgs e)
+        {
+            string timetest = "5/1/2020 12:00 AM";
+            string[] aryParts = timetest.Split(' ');
+            if (aryParts.Length > 1)
+            {
+                txtCustInfo.Text = aryParts[0].Trim();
+
+            }
+        }
+
+        private void btnWrite_Click(object sender, EventArgs e)
+        {
+
+            // Set a variable to the Documents path.
+            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            //create file name
+            DateTime d = DateTime.Now;
+            string dateString = d.ToString("yyyyMMddHHmmss");
+            string filename1 = "customers-" + dateString + ".txt";
+            string fullpath = Path.Combine(docPath, filename1);
+
+            // Create a string with a line of text.
+            string text1 = txtAddressLine3.Text + Environment.NewLine;
+
+
+            // Write the text to a new file named "WriteFile.txt".
+            File.WriteAllText(fullpath, text1);
+
+            // create new line and append that
+            text1 += " more text" + Environment.NewLine;
+
+            // Append new lines of text to the file
+            File.AppendAllText(fullpath, text1);
         }
     }
 }

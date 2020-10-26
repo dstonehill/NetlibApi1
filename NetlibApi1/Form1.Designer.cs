@@ -75,8 +75,17 @@
             this.btnSearchName = new System.Windows.Forms.Button();
             this.btnTest1 = new System.Windows.Forms.Button();
             this.btnTest2 = new System.Windows.Forms.Button();
+            this.btnTestDate = new System.Windows.Forms.Button();
+            this.txtSearchLicenseTo = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.btnWrite = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -250,21 +259,21 @@
             this.label5.Location = new System.Drawing.Point(45, 448);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 20);
+            this.label5.Size = new System.Drawing.Size(180, 20);
             this.label5.TabIndex = 19;
-            this.label5.Text = "License ID (SWK)";
+            this.label5.Text = "License ID (SWK) From:";
             // 
             // txtSearchLicense
             // 
-            this.txtSearchLicense.Location = new System.Drawing.Point(214, 448);
+            this.txtSearchLicense.Location = new System.Drawing.Point(233, 448);
             this.txtSearchLicense.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSearchLicense.Name = "txtSearchLicense";
-            this.txtSearchLicense.Size = new System.Drawing.Size(290, 26);
+            this.txtSearchLicense.Size = new System.Drawing.Size(117, 26);
             this.txtSearchLicense.TabIndex = 18;
             // 
             // btnSearchLic
             // 
-            this.btnSearchLic.Location = new System.Drawing.Point(543, 444);
+            this.btnSearchLic.Location = new System.Drawing.Point(810, 569);
             this.btnSearchLic.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSearchLic.Name = "btnSearchLic";
             this.btnSearchLic.Size = new System.Drawing.Size(222, 35);
@@ -560,11 +569,99 @@
             this.btnTest2.UseVisualStyleBackColor = true;
             this.btnTest2.Click += new System.EventHandler(this.btnTest2_Click);
             // 
+            // btnTestDate
+            // 
+            this.btnTestDate.Location = new System.Drawing.Point(1801, 545);
+            this.btnTestDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTestDate.Name = "btnTestDate";
+            this.btnTestDate.Size = new System.Drawing.Size(222, 31);
+            this.btnTestDate.TabIndex = 42;
+            this.btnTestDate.Text = "Test Date Split";
+            this.btnTestDate.UseVisualStyleBackColor = true;
+            this.btnTestDate.Click += new System.EventHandler(this.btnTestDate_Click);
+            // 
+            // txtSearchLicenseTo
+            // 
+            this.txtSearchLicenseTo.Location = new System.Drawing.Point(418, 451);
+            this.txtSearchLicenseTo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSearchLicenseTo.Name = "txtSearchLicenseTo";
+            this.txtSearchLicenseTo.Size = new System.Drawing.Size(130, 26);
+            this.txtSearchLicenseTo.TabIndex = 43;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(367, 454);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(31, 20);
+            this.label9.TabIndex = 44;
+            this.label9.Text = "To:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Controls.Add(this.radioButton2);
+            this.groupBox3.Controls.Add(this.radioButton3);
+            this.groupBox3.Location = new System.Drawing.Point(810, 448);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(107, 100);
+            this.groupBox3.TabIndex = 23;
+            this.groupBox3.TabStop = false;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 70);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(82, 24);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.Text = "Range";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 42);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(78, 24);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "Single";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Checked = true;
+            this.radioButton3.Location = new System.Drawing.Point(6, 14);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(51, 24);
+            this.radioButton3.TabIndex = 0;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "All";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // btnWrite
+            // 
+            this.btnWrite.Location = new System.Drawing.Point(862, 1199);
+            this.btnWrite.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnWrite.Name = "btnWrite";
+            this.btnWrite.Size = new System.Drawing.Size(222, 31);
+            this.btnWrite.TabIndex = 45;
+            this.btnWrite.Text = "Write Stuff";
+            this.btnWrite.UseVisualStyleBackColor = true;
+            this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2360, 1280);
+            this.Controls.Add(this.btnWrite);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtSearchLicenseTo);
+            this.Controls.Add(this.btnTestDate);
             this.Controls.Add(this.btnTest2);
             this.Controls.Add(this.btnTest1);
             this.Controls.Add(this.label8);
@@ -613,6 +710,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -667,6 +766,14 @@
         private System.Windows.Forms.Button btnSearchName;
         private System.Windows.Forms.Button btnTest1;
         private System.Windows.Forms.Button btnTest2;
+        private System.Windows.Forms.Button btnTestDate;
+        private System.Windows.Forms.TextBox txtSearchLicenseTo;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.Button btnWrite;
     }
 }
 

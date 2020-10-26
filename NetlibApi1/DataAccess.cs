@@ -228,7 +228,7 @@ namespace NetlibApi1
          /*
          * Update SWK fields on License/SerialNumber SQL Record
          */
-        public static string updateLicSWKData(string SerialNumId, string newSWId, string newSWPwd, string UpdMode)
+        public static string updateLicSWKData(string SerialNumId, string LicType, string newSWId, string newSWPwd, string UpdMode)
         {
             // Open connection to SQL Server
             string connectionString = ConfigurationManager.ConnectionStrings["NetlibApi1.Properties.Settings.custdb"].ConnectionString;
@@ -246,7 +246,7 @@ namespace NetlibApi1
                 dbCmd.CommandText += " SWDateInserted = GETDATE(),";
             }
             dbCmd.CommandText += " SWDateModified = GETDATE()";
-            dbCmd.CommandText += " where SerialNumberID = @id ";
+            dbCmd.CommandText += " where SerialNumberID = @id and LicType = @lictype";
 
             // set parameters
             SqlParameter LicIDParam = new SqlParameter("@LicID", newSWId);
@@ -255,6 +255,8 @@ namespace NetlibApi1
             dbCmd.Parameters.Add(LicPWParam);
             SqlParameter IDParam = new SqlParameter("@id", SerialNumId);
             dbCmd.Parameters.Add(IDParam);
+            SqlParameter LicTypeParam = new SqlParameter("@lictype", LicType);
+            dbCmd.Parameters.Add(LicTypeParam);
 
             // Update the data
             int queryresult = dbCmd.ExecuteNonQuery();

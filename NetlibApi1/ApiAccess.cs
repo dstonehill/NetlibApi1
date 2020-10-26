@@ -143,7 +143,7 @@ namespace NetlibApi1
             LicAddXML += "<UserID>" + userID + "</UserID>";
             LicAddXML += "<UserPassword>" + userPassword + "</UserPassword>";
             LicAddXML += "<ProdOptionID>" + OptionID + "</ProdOptionID>";
-            LicAddXML += "<Quantity>1</Quantity>";
+            LicAddXML += "<Quantity>" + Qty+ "</Quantity>";
             LicAddXML += "<UnitPrice>1.00</UnitPrice>";
             LicAddXML += "<Expiration>" + expire + "</Expiration>";
             LicAddXML += "<ActivationCount>" + ActCount + "</ActivationCount>";
