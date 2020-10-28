@@ -41,7 +41,7 @@ namespace NetlibApi1
             // Write header line to a new results files
             string custfiletext = "AcctName \t ClientID:  \t Add Result  \t LicResult" + Environment.NewLine;
             File.WriteAllText(custfullpath, custfiletext);
-            string licfiletext = "AcctName  \t clientID  \t SerialNum \t LicType  \t CustomerID  \t AddLicResult" + Environment.NewLine;
+            string licfiletext = "AcctName  \t clientID  \t SerialNum \t LicType  \t CustomerID  \t AddLicResult \t LicID \t LicPW \t AddLicNotes" + Environment.NewLine;
             File.WriteAllText(licfullpath, licfiletext);
 
 
@@ -139,7 +139,7 @@ namespace NetlibApi1
                     {
                         // get licenses for this AcctID
                         int licensesProcessed;
-                        licensesProcessed = ImportData.procLicenses(Acctid, newCustID, lstLicBox, licfullpath, test);
+                        licensesProcessed = ImportData.procLicenses(Acctid, newCustID, AcctName, clientID, lstLicBox, licfullpath, test);
                         licResult = "Lic: " + licensesProcessed.ToString();
 
                     }
@@ -160,7 +160,7 @@ namespace NetlibApi1
         * procLicenses - This procedure reads Serial Numbers from SQL for selected AcctID and calls routine to add
         * to Solo Server
         */
-        public static int procLicenses(string AcctID, string CustomerID, ListBox lstLicBox, string licfullpath, bool testLic)
+        public static int procLicenses(string AcctID, string CustomerID, string AcctName, string clientID, ListBox lstLicBox, string licfullpath, bool testLic)
         {
             /* 
              * This procedure reads Serial Numbers from SQL for selected AcctID and calls routine to add
@@ -193,14 +193,15 @@ namespace NetlibApi1
                 while (rsDataSN.Read())
                 {
                     //assign sql data to variables
-                    string AcctName = rsDataSN["AccountName"].ToString();
-                    string clientID = rsDataSN["ClientID"].ToString();
+                    // string AcctName = rsDataSN["AccountName"].ToString();
+                    // string clientID = rsDataSN["ClientID"].ToString();
                     string SerialNum = rsDataSN["SerialNumber"].ToString();
                     string LicType = rsDataSN["LicType"].ToString();
 
 
                     // Has this License been added to Soloserver previously
                     string SWLicID = rsDataSN["SWLicenseID"].ToString();
+                    string SWLicPW = rsDataSN["SWLicensePW"].ToString();
                     if (SWLicID == "")
                     {
                         // add License to SoloServer
@@ -210,7 +211,7 @@ namespace NetlibApi1
                         string expire = rsDataSN["SuppExpireDate"].ToString();
                         string activation = rsDataSN["ActivationCount"].ToString();
                         string deactivation = rsDataSN["DeactivationCount"].ToString();
-                        string cores = rsDataSN["LicenseCounter"].ToString();
+                        string cores = rsDataSN["cores"].ToString();
                         string notes = rsDataSN["Notes"].ToString();
                         //string acctid = rsDataSN["AcctID"].ToString();
                         string SNID = rsDataSN["SerialNumberID"].ToString();
@@ -259,7 +260,7 @@ namespace NetlibApi1
                         {
                             // successful SWK add, split up res
 
-                            AddLicResult = "Added: " + newLicID + newLicResult;
+                            AddLicResult = "Added: \t " + newLicID + " \t PW: " + newLicPwd + " \t " + newLicResult;
 
                             // update Account record in SQL with SWK data
                             // updateLicSWKData(string SerialNumId, string newSWId, string newSWPwd, string UpdMode)
@@ -271,7 +272,7 @@ namespace NetlibApi1
                     {
                         // has been previously added according to Account Record
                         // confirm customer on SoloServer and then process licenses.
-                        AddLicResult = "Prev Lic Add: " + SWLicID;
+                        AddLicResult = "Exists:\t " + SWLicID + " \t PW: " + SWLicPW;
                     }
 
                     //add items to list and results file
@@ -358,11 +359,11 @@ namespace NetlibApi1
                 //Check results of update
                 XmlNode LicUpdUDF = resultUpdUDF.SelectSingleNode("ResultCode");
                 if (LicUpdUDF == null)
-                    LicResult += "|UDF result: null";
+                    LicResult += " | UDF result: null";
                 else if (LicUpdUDF.InnerText != "0")
-                    LicResult += "|UDF Error: " + LicUpdUDF.InnerText;
+                    LicResult += " | UDF Error: " + LicUpdUDF.InnerText;
                 else
-                    LicResult += "|UDF Added";
+                    LicResult += " | UDF Added";
 
                 // update CustomData
                 //UpdateSWKLicenseCData(string LicID, string cdata)
@@ -376,11 +377,11 @@ namespace NetlibApi1
                 //Check results of update
                 XmlNode LicUpdCData = resultUpdCData.SelectSingleNode("ResultCode");
                 if (LicUpdCData == null)
-                    LicResult += "|CData result: null";
+                    LicResult += " | CData result: null";
                 else if (LicUpdCData.InnerText != "0")
-                    LicResult += "|CData Error: " + LicUpdCData.InnerText;
+                    LicResult += " | CData Error: " + LicUpdCData.InnerText;
                 else
-                    LicResult += "|CData Added";
+                    LicResult += " | CData Added";
 
 
             }
