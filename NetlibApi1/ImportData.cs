@@ -18,7 +18,7 @@ namespace NetlibApi1
          * procAccounts - by range, single or allfrom SQL - fill the passed-in Cust list box with the names of processed accounts and
          * License lst box with processed licenses
          */
-        public static void procAccounts(int searchtype, string clientid1, string clientid2, ListBox lstCustBox, ListBox lstLicBox, bool test )
+        public static void procAccounts(int searchtype, string clientid1, string clientid2, ListBox lstCustBox, ListBox lstLicBox, bool test,bool custonly )
         {
             lstCustBox.Items.Clear();
             lstLicBox.Items.Clear();
@@ -128,6 +128,11 @@ namespace NetlibApi1
                         // confirm customer on SoloServer and then process licenses.
                         newCustID = SWCustomerID;
                         AddCustResult = "Prev Add: " + newCustID;
+                    }
+
+                    if (custonly)
+                    {
+                        SkipError = true;
                     }
 
                     string licResult = "";

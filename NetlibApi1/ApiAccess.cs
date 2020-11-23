@@ -40,7 +40,7 @@ namespace NetlibApi1
         }
 
         /*
-        ** searchSWKCustomer
+        ** searchSWKCustomer by Customer ID
         */
         public static XmlNode searchSWKCustomer(string CustID)
         {
